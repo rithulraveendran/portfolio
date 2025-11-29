@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>About Me - Rithul</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>
+  .material-symbols-outlined {
+    font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24;
+  }
+</style>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#A855F7",  /* About Me page color for headings */
+          "background-light": "#f7f6f8",
+          "background-dark": "#000000",
+        },
+        fontFamily: {
+          "display": ["Montserrat", "sans-serif"]
+        },
+      },
+    },
+  }
+</script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-white">
+
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+  <div class="layout-container flex h-full grow flex-col">
+    <div class="px-6 md:px-12 lg:px-20 flex flex-1 justify-center py-5">
+      <div class="layout-content-container flex flex-col max-w-4xl w-full">
+
+        <!-- Header -->
+<header class="relative flex items-center justify-between whitespace-nowrap border-b border-white/20 px-5 sm:px-10 py-4">
+  <!-- Logo -->
+  <div class="flex items-center gap-2">
+    <span class="material-symbols-outlined text-primary !text-4xl">auto_awesome</span>
+    <span class="text-xl font-bold">Rithul</span>
+  </div>
+
+  <!-- Desktop Navigation -->
+  <nav class="hidden md:flex flex-1 justify-end gap-8">
+    <a class="text-white text-sm font-medium hover:text-primary transition-colors" href="index.html">Home</a>
+    <a class="text-white text-sm font-medium hover:text-primary transition-colors" href="about.html">About</a>
+    <a class="text-primary text-sm font-bold transition-colors" href="skills.html">Skills</a>
+    <a class="text-white text-sm font-medium hover:text-primary transition-colors" href="projects.html">Projects</a>
+    <a class="text-white text-sm font-medium hover:text-primary transition-colors" href="achievements.html">Achievements</a>
+    <a class="text-white text-sm font-medium hover:text-primary transition-colors" href="contact.html">Contact</a>
+  </nav>
+
+  <!-- Mobile Hamburger -->
+  <div class="md:hidden flex">
+    <button id="hamburger-btn" class="focus:outline-none">
+      <span class="material-symbols-outlined text-3xl">menu</span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden absolute top-full right-0 w-full bg-background-dark flex flex-col gap-4 px-5 py-4 z-50 transition-all duration-300">
+    <a class="text-white text-sm font-medium hover:text-primary transition-colors" href="index.html">Home</a>
+    <a class="text-white text-sm font-medium hover:text-primary transition-colors" href="about.html">About</a>
+    <a class="text-primary text-sm font-bold transition-colors" href="skills.html">Skills</a>
+    <a class="text-white text-sm font-medium hover:text-primary transition-colors" href="projects.html">Projects</a>
+    <a class="text-white text-sm font-medium hover:text-primary transition-colors" href="achievements.html">Achievements</a>
+    <a class="text-white text-sm font-medium hover:text-primary transition-colors" href="contact.html">Contact</a>
+  </div>
+</header>
+
+<!-- Toggle Script -->
+<script>
+  const btn = document.getElementById("hamburger-btn");
+  const menu = document.getElementById("mobile-menu");
+
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+  });
+</script>
+
+        <!-- Main Content -->
+        <main class="flex flex-col flex-1 py-10 sm:py-20">
+
+          <!-- About Me Title -->
+          <h1 class="text-primary font-black text-4xl sm:text-5xl leading-tight tracking-tight text-left pb-6">About Me</h1>
+
+          <!-- Bio Section -->
+          <h2 class="text-primary text-2xl font-bold leading-tight tracking-tight pb-3 pt-6">Bio</h2>
+          <p class="text-white text-base font-normal leading-relaxed pb-3 pt-1">
+            I’m a first-year AI & ML student passionate about building intelligent software and exploring emerging technologies. I enjoy programming in Python and C, learning about AI & ML, and expressing creativity through photography. I’m always eager to collaborate on projects, participate in hackathons, and grow my skills in tech and innovation.
+          </p>
+
+          <!-- Hobbies Section -->
+          <h2 class="text-primary text-2xl font-bold leading-tight tracking-tight pb-3 pt-12">Hobbies & Interests</h2>
+          <div class="flex flex-wrap gap-4 pb-8">
+            <div class="flex items-center gap-2 bg-background-light dark:bg-gray-800 px-3 py-2 rounded-lg">
+              <span class="material-symbols-outlined text-primary">camera_alt</span>
+              <span class="text-white">Photography</span>
+            </div>
+            <div class="flex items-center gap-2 bg-background-light dark:bg-gray-800 px-3 py-2 rounded-lg">
+              <span class="material-symbols-outlined text-primary">sports_esports</span>
+              <span class="text-white">Gaming</span>
+            </div>
+            <div class="flex items-center gap-2 bg-background-light dark:bg-gray-800 px-3 py-2 rounded-lg">
+              <span class="material-symbols-outlined text-primary">code</span>
+              <span class="text-white">Coding</span>
+            </div>
+            <div class="flex items-center gap-2 bg-background-light dark:bg-gray-800 px-3 py-2 rounded-lg">
+              <span class="material-symbols-outlined text-primary">public</span>
+              <span class="text-white">Exploring Tech Trends</span>
+            </div>
+          </div>
+
+          <!-- Education Section -->
+          <h2 class="text-primary text-2xl font-bold leading-tight tracking-tight pb-3 pt-12">Education</h2>
+          <div class="grid grid-cols-[30%_1fr] sm:grid-cols-[20%_1fr] gap-x-6">
+            <div class="col-span-2 grid grid-cols-subgrid border-t border-t-white/20 py-5">
+              <p class="text-gray-400 text-sm font-normal leading-normal">School</p>
+              <p class="text-white text-sm font-normal leading-normal">Sainik School Kazhakootam (2018–2025)</p>
+            </div>
+            <div class="col-span-2 grid grid-cols-subgrid border-t border-t-white/20 py-5">
+              <p class="text-gray-400 text-sm font-normal leading-normal">College</p>
+              <p class="text-white text-sm font-normal leading-normal">St. Joseph’s College of Engineering – B.Tech AI & ML (2025–2029)</p>
+            </div>
+          </div>
+
+        </main>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

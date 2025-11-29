@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Contact - Rithul</title>
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+<style>
+  .glow-on-hover:hover {
+      box-shadow: 0 0 15px 5px rgba(155, 89, 182, 0.4);
+  }
+</style>
+
+<script>
+tailwind.config = {
+    darkMode: "class",
+    theme: {
+        extend: {
+            colors: {
+                "primary": "#9B59B6",
+                "background-light": "#f7f6f8",
+                "background-dark": "#000000",
+            },
+            fontFamily: {
+                "display": ["Montserrat", "sans-serif"]
+            }
+        }
+    }
+}
+</script>
+</head>
+
+<body class="font-display bg-background-light dark:bg-background-dark text-[#EAEAEA]">
+
+<div class="relative flex min-h-screen w-full flex-col">
+  <div class="flex flex-1 justify-center py-5 px-4 sm:px-10 md:px-20 lg:px-40">
+    <div class="flex flex-col max-w-[960px] w-full">
+
+<header class="sticky top-0 z-50 flex items-center justify-between border-b border-[#333333] px-4 sm:px-6 py-4 bg-background-dark/80 backdrop-blur-sm">
+  <!-- Logo -->
+  <div class="flex items-center gap-4">
+    <h2 class="text-white text-lg font-bold tracking-[-0.015em]">Rithul</h2>
+  </div>
+
+  <!-- Desktop nav -->
+  <nav class="hidden md:flex flex-1 justify-center gap-8">
+    <a class="text-[#EAEAEA] hover:text-primary text-sm font-medium" href="index.html">Home</a>
+    <a class="text-[#EAEAEA] hover:text-primary text-sm font-medium" href="skills.html">Skills</a>
+    <a class="text-[#EAEAEA] hover:text-primary text-sm font-medium" href="projects.html">Projects</a>
+    <a class="text-[#EAEAEA] hover:text-primary text-sm font-medium" href="achievements.html">Achievements</a>
+    <a class="text-[#EAEAEA] hover:text-primary text-sm font-medium" href="about.html">About</a>
+    <a class="text-primary font-bold text-sm" href="contact.html">Contact</a>
+  </nav>
+
+  <!-- Mobile hamburger -->
+  <div class="md:hidden flex">
+    <button id="hamburger-btn" class="focus:outline-none">
+      <span class="material-symbols-outlined text-3xl">menu</span>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden absolute top-full right-0 w-full bg-background-dark flex flex-col gap-4 px-5 py-4 z-50 transition-all duration-300">
+    <a class="text-white text-sm font-medium hover:text-primary transition-colors" href="index.html">Home</a>
+    <a class="text-white text-sm font-medium hover:text-primary transition-colors" href="skills.html">Skills</a>
+    <a class="text-white text-sm font-medium hover:text-primary transition-colors" href="projects.html">Projects</a>
+    <a class="text-white text-sm font-medium hover:text-primary transition-colors" href="achievements.html">Achievements</a>
+    <a class="text-white text-sm font-medium hover:text-primary transition-colors" href="about.html">About</a>
+    <a class="text-primary text-sm font-bold" href="contact.html">Contact</a>
+  </div>
+</header>
+
+<script>
+const btn = document.getElementById("hamburger-btn");
+const menu = document.getElementById("mobile-menu");
+
+btn.addEventListener("click", () => {
+  menu.classList.toggle("hidden");
+});
+</script>
+
+      <!-- MAIN -->
+      <main class="flex flex-col items-center flex-1 py-16 sm:py-24 px-4 text-center">
+        <div class="flex flex-col gap-6 w-full max-w-[960px]">
+
+          <!-- Heading -->
+          <div class="flex flex-col gap-3">
+            <h1 class="text-primary text-4xl sm:text-5xl font-black tracking-tighter">Get in Touch</h1>
+            <p class="text-[#EAEAEA] text-base">Have a project in mind or just want to say hi? Feel free to reach out.</p>
+          </div>
+
+          <!-- FORM -->
+          <form action="https://api.web3forms.com/submit" method="POST" class="flex flex-col gap-6 mt-8 text-left">
+
+            <input type="hidden" name="access_key" value="8b40dd94-0094-4e12-a830-e2ad2a89779f">
+
+            <div class="flex flex-col sm:flex-row gap-6">
+              <label class="flex flex-col flex-1">
+                <p class="text-[#EAEAEA] text-base font-medium pb-2">Name</p>
+                <input name="name" required id="name" type="text"
+                  placeholder="Enter your name"
+                  class="form-input w-full rounded-xl text-[#EAEAEA] border border-[#333333] bg-transparent h-14 px-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition"/>
+              </label>
+
+              <label class="flex flex-col flex-1">
+                <p class="text-[#EAEAEA] text-base font-medium pb-2">Email</p>
+                <input name="email" required id="email" type="email"
+                  placeholder="Enter your email"
+                  class="form-input w-full rounded-xl text-[#EAEAEA] border border-[#333333] bg-transparent h-14 px-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition"/>
+              </label>
+            </div>
+
+            <label class="flex flex-col flex-1">
+              <p class="text-[#EAEAEA] text-base font-medium pb-2">Message</p>
+              <textarea name="message" required id="message" rows="5"
+                placeholder="Your message here..."
+                class="form-input w-full rounded-xl text-[#EAEAEA] border border-[#333333] bg-transparent p-4 min-h-[150px] focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition"></textarea>
+            </label>
+
+            <button type="submit"
+              class="flex w-full items-center justify-center rounded-xl h-12 px-6 bg-primary text-white text-base font-bold glow-on-hover hover:bg-opacity-90 active:scale-95 transition">
+              Send
+            </button>
+          </form>
+
+          <!-- Direct Contact -->
+          <div class="mt-12 flex flex-col items-center gap-3">
+            <p class="text-[#EAEAEA]">Or contact me directly at:</p>
+            <div class="flex items-center gap-2 group cursor-pointer" onclick="copyEmail()">
+              <a id="emailLink" class="text-primary text-lg font-medium group-hover:underline"
+                 href="mailto:r.rithul@icloud.com">r.rithul@icloud.com</a>
+              <span class="material-symbols-outlined text-[#EAEAEA] text-xl group-hover:text-primary">content_copy</span>
+            </div>
+            <p id="copyMessage" class="text-sm text-green-400 mt-2 hidden">Email copied to clipboard!</p>
+          </div>
+
+        </div>
+      </main>
+
+    </div>
+  </div>
+</div>
+
+<script>
+function copyEmail() {
+  const email = document.getElementById('emailLink').textContent;
+  navigator.clipboard.writeText(email).then(() => {
+    const msg = document.getElementById('copyMessage');
+    msg.classList.remove('hidden');
+    setTimeout(() => { msg.classList.add('hidden'); }, 2000);
+  });
+}
+</script>
+
+</body>
+</html>

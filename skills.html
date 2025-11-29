@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Skills - Rithul</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>
+  .material-symbols-outlined {
+    font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24;
+  }
+</style>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#A855F7",  /* Same as About Me headings */
+          "background-light": "#f7f6f8",
+          "background-dark": "#000000",
+        },
+        fontFamily: {
+          "display": ["Montserrat", "sans-serif"]
+        },
+      },
+    },
+  }
+</script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white">
+
+<div class="relative flex min-h-screen w-full flex-col">
+  <div class="flex flex-1 justify-center py-5 px-6 md:px-12 lg:px-20">
+    <div class="flex max-w-4xl flex-1 flex-col">
+
+<!-- Header -->
+<header class="relative flex items-center justify-between whitespace-nowrap border-b border-white/20 px-5 sm:px-10 py-4">
+  <!-- Logo -->
+  <div class="flex items-center gap-2">
+    <span class="material-symbols-outlined text-primary !text-4xl">auto_awesome</span>
+    <span class="text-xl font-bold">Rithul</span>
+  </div>
+
+  <!-- Desktop Navigation -->
+  <nav class="hidden md:flex flex-1 justify-end gap-8">
+    <a class="text-white text-sm font-medium hover:text-primary transition-colors" href="index.html">Home</a>
+    <a class="text-white text-sm font-medium hover:text-primary transition-colors" href="about.html">About</a>
+    <a class="text-primary text-sm font-bold transition-colors" href="skills.html">Skills</a>
+    <a class="text-white text-sm font-medium hover:text-primary transition-colors" href="projects.html">Projects</a>
+    <a class="text-white text-sm font-medium hover:text-primary transition-colors" href="achievements.html">Achievements</a>
+    <a class="text-white text-sm font-medium hover:text-primary transition-colors" href="contact.html">Contact</a>
+  </nav>
+
+  <!-- Mobile Hamburger -->
+  <div class="md:hidden flex">
+    <button id="hamburger-btn" class="focus:outline-none">
+      <span class="material-symbols-outlined text-3xl">menu</span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden absolute top-full right-0 w-full bg-background-dark flex flex-col gap-4 px-5 py-4 z-50">
+    <a class="text-white text-sm font-medium hover:text-primary transition-colors" href="index.html">Home</a>
+    <a class="text-white text-sm font-medium hover:text-primary transition-colors" href="about.html">About</a>
+    <a class="text-primary text-sm font-bold transition-colors" href="skills.html">Skills</a>
+    <a class="text-white text-sm font-medium hover:text-primary transition-colors" href="projects.html">Projects</a>
+    <a class="text-white text-sm font-medium hover:text-primary transition-colors" href="achievements.html">Achievements</a>
+    <a class="text-white text-sm font-medium hover:text-primary transition-colors" href="contact.html">Contact</a>
+  </div>
+</header>
+
+<!-- Toggle Script -->
+<script>
+  const btn = document.getElementById("hamburger-btn");
+  const menu = document.getElementById("mobile-menu");
+
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+  });
+</script>
+
+      <!-- Main Content -->
+      <main class="flex flex-col gap-12 py-10 md:py-16">
+
+        <!-- Page Heading -->
+        <h1 class="text-primary font-black text-4xl sm:text-5xl leading-tight tracking-tight pb-6">My Skills &amp; Expertise</h1>
+
+        <!-- Programming & Tools -->
+        <div>
+          <h2 class="text-primary text-2xl font-bold leading-tight tracking-tight pb-5 pt-5">Programming &amp; Tools</h2>
+          <div class="flex flex-wrap gap-3">
+            <div class="flex h-10 items-center justify-center gap-x-2 rounded-lg bg-white/10 px-4 hover:bg-white/20 transition-colors">
+              <p class="text-white text-sm font-medium">Python</p>
+            </div>
+            <div class="flex h-10 items-center justify-center gap-x-2 rounded-lg bg-white/10 px-4 hover:bg-white/20 transition-colors">
+              <p class="text-white text-sm font-medium">C</p>
+            </div>
+            <div class="flex h-10 items-center justify-center gap-x-2 rounded-lg bg-white/10 px-4 hover:bg-white/20 transition-colors">
+              <p class="text-white text-sm font-medium">SQL</p>
+            </div>
+            <div class="flex h-10 items-center justify-center gap-x-2 rounded-lg bg-white/10 px-4 hover:bg-white/20 transition-colors">
+              <p class="text-white text-sm font-medium">GitHub</p>
+            </div>
+            <div class="flex h-10 items-center justify-center gap-x-2 rounded-lg bg-white/10 px-4 hover:bg-white/20 transition-colors">
+              <p class="text-white text-sm font-medium">VS Code</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- AI & ML Skills -->
+        <div>
+          <h2 class="text-primary text-2xl font-bold leading-tight tracking-tight pb-5 pt-5">AI &amp; ML Skills</h2>
+          <div class="flex flex-wrap gap-3">
+            <div class="flex h-10 items-center justify-center gap-x-2 rounded-lg bg-white/10 px-4 hover:bg-white/20 transition-colors">
+              <p class="text-white text-sm font-medium">Artificial Intelligence</p>
+            </div>
+            <div class="flex h-10 items-center justify-center gap-x-2 rounded-lg bg-white/10 px-4 hover:bg-white/20 transition-colors">
+              <p class="text-white text-sm font-medium">Machine Learning</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interests / Hobbies -->
+        <div>
+          <h2 class="text-primary text-2xl font-bold leading-tight tracking-tight pb-5 pt-5">Interests / Hobbies</h2>
+          <div class="flex flex-wrap gap-3">
+            <div class="flex h-10 items-center justify-center gap-x-2 rounded-lg bg-white/10 px-4 hover:bg-white/20 transition-colors">
+              <p class="text-white text-sm font-medium">Photography</p>
+            </div>
+            <div class="flex h-10 items-center justify-center gap-x-2 rounded-lg bg-white/10 px-4 hover:bg-white/20 transition-colors">
+              <p class="text-white text-sm font-medium">Basketball</p>
+            </div>
+            <div class="flex h-10 items-center justify-center gap-x-2 rounded-lg bg-white/10 px-4 hover:bg-white/20 transition-colors">
+              <p class="text-white text-sm font-medium">Tech Exploration</p>
+            </div>
+            <div class="flex h-10 items-center justify-center gap-x-2 rounded-lg bg-white/10 px-4 hover:bg-white/20 transition-colors">
+              <p class="text-white text-sm font-medium">Hackathons</p>
+            </div>
+          </div>
+        </div>
+
+      </main>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

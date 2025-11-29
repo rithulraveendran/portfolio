@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8" />
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<title>Rithul - Projects</title>
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+<link href="https://fonts.googleapis.com" rel="preconnect" />
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+<link
+  href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap"
+  rel="stylesheet"
+/>
+<link
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+  rel="stylesheet"
+/>
+
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          primary: "#A855F7",
+          "background-light": "#f7f6f8",
+          "background-dark": "#000000",
+        },
+        fontFamily: {
+          display: ["Montserrat", "sans-serif"],
+        },
+      },
+    },
+  };
+</script>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-[#F5F5F5]">
+
+<div class="relative flex min-h-screen w-full flex-col">
+
+  <!-- FIXED WIDTH (same as About page) -->
+  <div class="flex flex-1 justify-center py-5 px-4">
+    <div class="flex w-full max-w-[960px] flex-1 flex-col">
+<!-- Mobile hamburger -->
+<div class="md:hidden relative">
+  <button id="hamburger-btn" class="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white">
+    <span class="material-symbols-outlined">menu</span>
+  </button>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden absolute top-full right-0 w-full bg-background-dark flex flex-col gap-4 px-5 py-4 z-50">
+    <a class="text-white hover:text-primary" href="index.html">Home</a>
+    <a class="text-white hover:text-primary" href="about.html">About</a>
+    <a class="text-white hover:text-primary" href="skills.html">Skills</a>
+    <a class="text-white hover:text-primary" href="projects.html">Projects</a>
+    <a class="text-white hover:text-primary" href="achievements.html">Achievements</a>
+    <a class="text-white hover:text-primary" href="contact.html">Contact</a>
+  </div>
+</div>
+
+<script>
+  const btn = document.getElementById("hamburger-btn");
+  const menu = document.getElementById("mobile-menu");
+
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+  });
+</script>
+      <!-- MAIN CONTENT -->
+      <main class="flex-grow p-4 sm:p-6 md:p-8">
+
+        <h1 class="text-primary text-5xl font-black leading-tight tracking-[-0.03em] mb-10">
+          Projects
+        </h1>
+
+        <div class="flex flex-col gap-14">
+
+          <!-- PROJECT 1 -->
+          <div class="flex flex-col gap-6">
+            <div class="flex flex-col items-start gap-8 md:flex-row rounded-lg">
+
+              <!-- BIGGER IMAGE -->
+              <div class="w-full md:w-[70%] rounded-lg overflow-hidden">
+                <img
+                  src="images/manas.jpeg"
+                  class="w-full h-auto object-contain rounded-lg"
+                  alt="Manas AI"
+                />
+              </div>
+
+              <div class="flex flex-col gap-3 md:w-[30%]">
+                <p class="text-2xl font-bold">Manas AI</p>
+                <p class="text-base text-white/80 leading-relaxed">
+                  Manas AI is a mental-health companion web application offering supportive chat,
+                  mood tracking, and wellness tools.
+                </p>
+
+                <div class="flex flex-wrap gap-2 pt-2">
+                  <div class="badge"><p>Python</p></div>
+                  <div class="badge"><p>Flask</p></div>
+                  <div class="badge"><p>HTML/CSS</p></div>
+                  <div class="badge"><p>Firebase</p></div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- PROJECT 2 -->
+          <div class="flex flex-col gap-6">
+            <div class="flex flex-col items-start gap-8 md:flex-row rounded-lg">
+
+              <!-- BIGGER IMAGE -->
+              <div class="w-full md:w-[70%] rounded-lg overflow-hidden">
+                <img
+                  src="images/bookmyshow.jpg"
+                  class="w-full h-auto object-contain rounded-lg"
+                  alt="Movie Ticketing Software"
+                />
+              </div>
+
+              <div class="flex flex-col gap-3 md:w-[30%]">
+                <p class="text-2xl font-bold">Movie Ticketing Software</p>
+                <p class="text-base text-white/80 leading-relaxed">
+                  A Python console-based movie ticket booking system with SQL integration
+                  and PDF ticket generation.
+                </p>
+
+                <div class="flex flex-wrap gap-2 pt-2">
+                  <div class="badge"><p>Python</p></div>
+                  <div class="badge"><p>SQL</p></div>
+                  <div class="badge"><p>PDF Generation</p></div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </main>
+
+    </div>
+  </div>
+</div>
+
+<style>
+  .badge {
+    @apply flex h-8 items-center justify-center rounded-full bg-primary/20 px-4;
+  }
+  .badge p {
+    @apply text-sm font-medium text-primary;
+  }
+</style>
+
+</body>
+</html>

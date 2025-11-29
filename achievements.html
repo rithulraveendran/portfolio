@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rithul - Achievements & Certifications</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+</style>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "primary": "#9D4EDD",
+        "background-light": "#f7f6f8",
+        "background-dark": "#000000",
+      },
+      fontFamily: {
+        "display": ["Montserrat", "sans-serif"]
+      },
+      borderRadius: {"DEFAULT": "0.25rem", "lg": "0.75rem", "xl": "0.75rem", "full": "9999px"}, // increased rounding
+    },
+  },
+}
+</script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-[#E0E0E0]">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+  <div class="flex flex-1 justify-center py-5 px-4 sm:px-8 md:px-12 lg:px-20 xl:px-40">
+    <div class="flex flex-col w-full max-w-[960px]">
+
+     <header class="sticky top-0 z-50 flex items-center justify-between border-b border-gray-800 px-6 sm:px-10 py-4 bg-background-dark/80 backdrop-blur-sm">
+  <!-- Logo -->
+  <div class="flex items-center gap-4 text-white">
+    <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Rithul</h2>
+  </div>
+
+  <!-- Desktop nav -->
+  <nav class="hidden md:flex flex-1 justify-end gap-8">
+    <a class="text-gray-300 hover:text-white text-sm font-medium transition-colors" href="index.html">Home</a>
+    <a class="text-gray-300 hover:text-white text-sm font-medium transition-colors" href="about.html">About</a>
+    <a class="text-gray-300 hover:text-white text-sm font-medium transition-colors" href="skills.html">Skills</a>
+    <a class="text-gray-300 hover:text-white text-sm font-medium transition-colors" href="projects.html">Projects</a>
+    <a class="text-primary text-sm font-bold" href="achievements.html">Achievements</a>
+    <a class="text-gray-300 hover:text-white text-sm font-medium transition-colors" href="contact.html">Contact</a>
+  </nav>
+
+  <!-- Mobile hamburger -->
+  <div class="md:hidden flex">
+    <button id="hamburger-btn" class="focus:outline-none">
+      <span class="material-symbols-outlined text-3xl">menu</span>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden absolute top-full right-0 w-full bg-background-dark flex flex-col gap-4 px-5 py-4 z-50 transition-all duration-300">
+    <a class="text-white text-sm font-medium hover:text-primary transition-colors" href="index.html">Home</a>
+    <a class="text-white text-sm font-medium hover:text-primary transition-colors" href="about.html">About</a>
+    <a class="text-white text-sm font-medium hover:text-primary transition-colors" href="skills.html">Skills</a>
+    <a class="text-white text-sm font-medium hover:text-primary transition-colors" href="projects.html">Projects</a>
+    <a class="text-primary text-sm font-bold" href="achievements.html">Achievements</a>
+    <a class="text-white text-sm font-medium hover:text-primary transition-colors" href="contact.html">Contact</a>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById("hamburger-btn");
+  const menu = document.getElementById("mobile-menu");
+
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+  });
+</script>
+
+
+      <main class="flex-grow pt-16 pb-24">
+        <section class="flex flex-col gap-12">
+          <div class="flex flex-wrap justify-between gap-3 p-4">
+            <h1 class="text-primary text-4xl sm:text-5xl font-black leading-tight tracking-tight min-w-72">Achievements & Certifications</h1>
+          </div>
+
+          <!-- Certificates Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 p-4">
+
+            <!-- Certificate Item -->
+            <div class="flex flex-col gap-4 group">
+              <div class="w-full rounded-lg overflow-hidden">
+                <img src="images/makeathon.jpg" class="w-full h-[300px] sm:h-[340px] md:h-[380px] lg:h-[400px] object-contain rounded-lg" alt="Makeathon 2.0 Winner"/>
+              </div>
+              <div>
+                <p class="text-white text-lg font-bold leading-normal">Makeathon 2.0 Winner</p>
+                <p class="text-[#E0E0E0] text-sm font-normal leading-normal">CodeGeeks Team</p>
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-4 group">
+              <div class="w-full rounded-lg overflow-hidden">
+                <img src="images/computer.jpg" class="w-full h-[300px] sm:h-[340px] md:h-[380px] lg:h-[400px] object-contain rounded-lg" alt="CBSE 12th CS Topper"/>
+              </div>
+              <div>
+                <p class="text-white text-lg font-bold leading-normal">CBSE 12th CS Topper</p>
+                <p class="text-[#E0E0E0] text-sm font-normal leading-normal">CBSE Board</p>
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-4 group">
+              <div class="w-full rounded-lg overflow-hidden">
+                <img src="images/iot.jpg" class="w-full h-[300px] sm:h-[340px] md:h-[380px] lg:h-[400px] object-contain rounded-lg" alt="Foundations of Internet of Things"/>
+              </div>
+              <div>
+                <p class="text-white text-lg font-bold leading-normal">Foundations of Internet of Things</p>
+                <p class="text-[#E0E0E0] text-sm font-normal leading-normal">NASSCOM</p>
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-4 group">
+              <div class="w-full rounded-lg overflow-hidden">
+                <img src="images/python_course.jpg" class="w-full h-[300px] sm:h-[340px] md:h-[380px] lg:h-[400px] object-contain rounded-lg" alt="Create Your First Python Program"/>
+              </div>
+              <div>
+                <p class="text-white text-lg font-bold leading-normal">Create Your First Python Program</p>
+                <p class="text-[#E0E0E0] text-sm font-normal leading-normal">UST / Coursera</p>
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-4 group">
+              <div class="w-full rounded-lg overflow-hidden">
+                <img src="images/dbms.jpg" class="w-full h-[300px] sm:h-[340px] md:h-[380px] lg:h-[400px] object-contain rounded-lg" alt="DBMS Course"/>
+              </div>
+              <div>
+                <p class="text-white text-lg font-bold leading-normal">DBMS Course</p>
+                <p class="text-[#E0E0E0] text-sm font-normal leading-normal">Scaler</p>
+              </div>
+            </div>
+
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+</div>
+</body>
+</html>

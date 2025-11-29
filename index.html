@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Rithul - Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+</style>
+<style type="text/tailwindcss">
+@layer base {
+  :root {
+    --background-dark: #000000;
+    --primary: #A855F7;
+  }
+}
+</style>
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        primary: "var(--primary)",
+        "background-dark": "var(--background-dark)",
+        "background-light": "#f7f6f8"
+      },
+      fontFamily: {
+        display: ["Montserrat", "sans-serif"]
+      },
+      boxShadow: { glow: "0 0 15px 5px rgba(168,85,247,0.4)" }
+    }
+  }
+}
+</script>
+</head>
+<body class="font-display bg-background-dark text-white antialiased">
+
+<div class="relative flex h-auto min-h-screen w-full flex-col">
+
+<!-- Header -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-white/20 px-5 sm:px-10 py-4 relative">
+  <!-- Logo -->
+  <div class="flex items-center gap-2 text-white">
+    <span class="material-symbols-outlined text-primary text-4xl flex-shrink-0">auto_awesome</span>
+    <h2 class="text-white text-xl font-black leading-none flex items-center">Rithul</h2>
+  </div>
+
+  <!-- Desktop nav -->
+  <div class="hidden md:flex flex-1 justify-end gap-8">
+    <div class="flex items-center gap-9">
+      <a class="text-primary text-sm font-bold" href="index.html">Home</a>
+      <a class="text-gray-300 hover:text-white text-sm font-medium transition-colors" href="about.html">About</a>
+      <a class="text-gray-300 hover:text-white text-sm font-medium transition-colors" href="skills.html">Skills</a>
+      <a class="text-gray-300 hover:text-white text-sm font-medium transition-colors" href="projects.html">Projects</a>
+      <a class="text-gray-300 hover:text-white text-sm font-medium transition-colors" href="achievements.html">Achievements</a>
+      <a class="text-gray-300 hover:text-white text-sm font-medium transition-colors" href="contact.html">Contact</a>
+    </div>
+  </div>
+
+  <!-- Mobile hamburger -->
+  <div class="md:hidden flex">
+    <button id="hamburger-btn" class="text-white focus:outline-none">
+      <span class="material-symbols-outlined text-3xl">menu</span>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden absolute top-full right-0 w-full bg-background-dark flex flex-col gap-4 px-5 py-4 z-50 transition-all duration-300">
+    <a class="text-white text-sm font-medium hover:text-primary transition-colors" href="index.html">Home</a>
+    <a class="text-white text-sm font-medium hover:text-primary transition-colors" href="about.html">About</a>
+    <a class="text-white text-sm font-medium hover:text-primary transition-colors" href="skills.html">Skills</a>
+    <a class="text-white text-sm font-medium hover:text-primary transition-colors" href="projects.html">Projects</a>
+    <a class="text-white text-sm font-medium hover:text-primary transition-colors" href="achievements.html">Achievements</a>
+    <a class="text-white text-sm font-medium hover:text-primary transition-colors" href="contact.html">Contact</a>
+  </div>
+</header>
+
+<script>
+const btn = document.getElementById("hamburger-btn");
+const menu = document.getElementById("mobile-menu");
+
+btn.addEventListener("click", () => {
+  menu.classList.toggle("hidden");
+});
+</script>
+
+
+  <!-- Main Content -->
+  <div class="relative flex min-h-screen w-full flex-col items-center justify-center p-4">
+    <div class="flex h-full grow flex-col items-center justify-center">
+      <main class="flex max-w-2xl flex-col items-center gap-8 text-center">
+        <div class="h-40 w-40 overflow-hidden rounded-full">
+          <img alt="A portrait of Rithul" class="h-full w-full object-cover" src="images/rithul.jpg" />
+        </div>
+        <div class="flex flex-col items-center gap-4">
+          <h1 class="text-5xl font-black leading-tight tracking-tight text-primary md:text-6xl">Rithul R</h1>
+          <h2 class="text-base font-medium leading-normal text-gray-300 md:text-lg">1st-year AI & ML Student | Python Programmer | Tech Enthusiast</h2>
+        </div>
+        <p class="text-base font-normal leading-relaxed text-gray-300">
+          Hi! I’m a first-year AI & ML student who loves building smart software, exploring AI, and capturing moments through photography.
+        </p>
+        <div class="flex items-center justify-center gap-6 pt-4">
+          <a aria-label="LinkedIn Profile" class="transition-transform duration-200 hover:scale-110" href="https://www.linkedin.com/in/rithulraveendran/">
+            <img src="icons/linkedin.svg" alt="LinkedIn" class="h-11 w-11"/>
+          </a>
+          <a aria-label="GitHub Profile" class="transition-transform duration-200 hover:scale-110" href="https://github.com/rithulraveendran">
+            <img src="icons/github.svg" alt="GitHub" class="h-12 w-12"/>
+          </a>
+          <a aria-label="Instagram Profile" class="transition-transform duration-200 hover:scale-110" href="https://www.instagram.com/rit.xul_/">
+            <img src="icons/instagram.svg" alt="Instagram" class="h-16 w-16"/>
+          </a>
+          <a aria-label="Instagram Frames Profile" class="transition-transform duration-200 hover:scale-110" href="https://www.instagram.com/framesbyrit/">
+            <img src="icons/frames.svg" alt="Instagram Frames" class="h-14 w-14"/>
+          </a>
+        </div>
+      </main>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
