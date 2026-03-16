@@ -1,130 +1,535 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
-<head>
+<html lang="en"><head>
 <meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Rithul - Portfolio</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rithul R | Portfolio</title>
+<!-- Tailwind CSS v3 CDN -->
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
-<style>
-  .material-symbols-outlined {
-    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-  }
-</style>
-<style type="text/tailwindcss">
-@layer base {
-  :root {
-    --background-dark: #000000;
-    --primary: #A855F7;
-  }
-}
-</style>
-<script>
-tailwind.config = {
-  darkMode: "class",
-  theme: {
-    extend: {
-      colors: {
-        primary: "var(--primary)",
-        "background-dark": "var(--background-dark)",
-        "background-light": "#f7f6f8"
-      },
-      fontFamily: {
-        display: ["Montserrat", "sans-serif"]
-      },
-      boxShadow: { glow: "0 0 15px 5px rgba(168,85,247,0.4)" }
+<style data-purpose="custom-fonts">
+    @import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap');
+    :root {
+      color-scheme: dark;
     }
-  }
-}
-</script>
+    body {
+      font-family: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+      background-color: #0b0d10;
+      /* Dotted grid background simulation */
+      background-image: radial-gradient(rgba(148, 163, 184, 0.18) 1px, transparent 1px);
+      background-size: 36px 36px;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Funnel Display', sans-serif;
+      letter-spacing: -0.01em;
+    }
+  </style>
+<style data-purpose="animations">
+    .tilted-card {
+      transform: rotate(-3deg);
+      transition: transform 0.3s ease;
+    }
+    .tilted-card:hover {
+      transform: rotate(0deg);
+    }
+    .project-card:hover img {
+      transform: scale(1.02);
+      transition: transform 0.3s ease;
+    }
+    img:not(.no-zoom) {
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    img:not(.no-zoom):hover {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.18);
+    }
+    .about-carousel {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      height: 520px;
+      overflow: hidden;
+    }
+    .about-column {
+      position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+    }
+    .about-track {
+      display: grid;
+      gap: 16px;
+      animation: scroll-up 18s linear infinite;
+    }
+    .about-track.alt {
+      animation-duration: 22s;
+    }
+    .about-photo {
+      object-fit: contain;
+      object-position: center;
+    }
+    @keyframes scroll-up {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-50%);
+      }
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .achievement-card {
+      transform: scale(0.94);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      opacity: 0.7;
+      filter: saturate(0.85) brightness(0.82);
+    }
+    .achievement-card.is-center {
+      transform: scale(1);
+      opacity: 1;
+      filter: none;
+    }
+    #achievementTrack {
+      scroll-padding-inline: clamp(16px, 50vw - 180px, 240px);
+    }
+    .carousel-spacer {
+      flex: 0 0 clamp(16px, 50vw - 180px, 240px);
+    }
+    .carousel-arrow {
+      background: rgba(15, 23, 42, 0.75);
+      color: white;
+      width: 44px;
+      height: 44px;
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(8px);
+    }
+  </style>
 </head>
-<body class="font-display bg-background-dark text-white antialiased">
-
-<div class="relative flex h-auto min-h-screen w-full flex-col">
-
-<!-- Header -->
-<header class="flex items-center justify-between whitespace-nowrap border-b border-white/20 px-5 sm:px-10 py-4 relative">
-  <!-- Logo -->
-  <div class="flex items-center gap-2 text-white">
-    <span class="material-symbols-outlined text-primary text-4xl flex-shrink-0">auto_awesome</span>
-    <h2 class="text-white text-xl font-black leading-none flex items-center">Rithul</h2>
-  </div>
-
-  <!-- Desktop nav -->
-  <div class="hidden md:flex flex-1 justify-end gap-8">
-    <div class="flex items-center gap-9">
-      <a class="text-primary text-sm font-bold" href="index.html">Home</a>
-      <a class="text-gray-300 hover:text-white text-sm font-medium transition-colors" href="about.html">About</a>
-      <a class="text-gray-300 hover:text-white text-sm font-medium transition-colors" href="skills.html">Skills</a>
-      <a class="text-gray-300 hover:text-white text-sm font-medium transition-colors" href="projects.html">Projects</a>
-      <a class="text-gray-300 hover:text-white text-sm font-medium transition-colors" href="achievements.html">Achievements</a>
-      <a class="text-gray-300 hover:text-white text-sm font-medium transition-colors" href="contact.html">Contact</a>
-    </div>
-  </div>
-
-  <!-- Mobile hamburger -->
-  <div class="md:hidden flex">
-    <button id="hamburger-btn" class="text-white focus:outline-none">
-      <span class="material-symbols-outlined text-3xl">menu</span>
-    </button>
-  </div>
-
-  <!-- Mobile menu -->
-  <div id="mobile-menu" class="hidden absolute top-full right-0 w-full bg-background-dark flex flex-col gap-4 px-5 py-4 z-50 transition-all duration-300">
-    <a class="text-white text-sm font-medium hover:text-primary transition-colors" href="index.html">Home</a>
-    <a class="text-white text-sm font-medium hover:text-primary transition-colors" href="about.html">About</a>
-    <a class="text-white text-sm font-medium hover:text-primary transition-colors" href="skills.html">Skills</a>
-    <a class="text-white text-sm font-medium hover:text-primary transition-colors" href="projects.html">Projects</a>
-    <a class="text-white text-sm font-medium hover:text-primary transition-colors" href="achievements.html">Achievements</a>
-    <a class="text-white text-sm font-medium hover:text-primary transition-colors" href="contact.html">Contact</a>
-  </div>
+<body class="text-slate-100 antialiased">
+<!-- BEGIN: MainHeader -->
+<header class="fixed top-0 left-0 right-0 z-50 px-6 py-4 flex justify-between items-center max-w-7xl mx-auto">
+<nav class="flex items-center gap-8 ml-auto">
+<a class="text-sm font-medium text-slate-300 hover:text-white transition-colors" href="resume.pdf">Resume</a>
+<a class="bg-[#0f172a] text-white px-5 py-2.5 rounded-full text-sm font-medium flex items-center gap-2 hover:bg-slate-800 transition-all" href="https://www.instagram.com/rit.xul_">
+<svg fill="currentColor" height="16" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+<path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-2.5a2 2 0 0 0-1.6.8L8 14.333 6.1 11.8a2 2 0 0 0-1.6-.8H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2.5a1 1 0 0 1 .8.4l1.9 2.533a1 1 0 0 0 1.6 0l1.9-2.533a1 1 0 0 1 .8-.4H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"></path>
+</svg>
+        Let's Talk
+      </a>
+</nav>
 </header>
-
-<script>
-const btn = document.getElementById("hamburger-btn");
-const menu = document.getElementById("mobile-menu");
-
-btn.addEventListener("click", () => {
-  menu.classList.toggle("hidden");
-});
-</script>
-
-
-  <!-- Main Content -->
-  <div class="relative flex min-h-screen w-full flex-col items-center justify-center p-4">
-    <div class="flex h-full grow flex-col items-center justify-center">
-      <main class="flex max-w-2xl flex-col items-center gap-8 text-center">
-        <div class="h-40 w-40 overflow-hidden rounded-full">
-          <img alt="A portrait of Rithul" class="h-full w-full object-cover" src="images/rithul.jpg" />
-        </div>
-        <div class="flex flex-col items-center gap-4">
-          <h1 class="text-5xl font-black leading-tight tracking-tight text-primary md:text-6xl">Rithul R</h1>
-          <h2 class="text-base font-medium leading-normal text-gray-300 md:text-lg">1st-year AI & ML Student | Python Programmer | Tech Enthusiast</h2>
-        </div>
-        <p class="text-base font-normal leading-relaxed text-gray-300">
-          Hi! I’m a first-year AI & ML student who loves building smart software, exploring AI, and capturing moments through photography.
-        </p>
-        <div class="flex items-center justify-center gap-6 pt-4">
-          <a aria-label="LinkedIn Profile" class="transition-transform duration-200 hover:scale-110" href="https://www.linkedin.com/in/rithulraveendran/">
-            <img src="icons/linkedin.svg" alt="LinkedIn" class="h-11 w-11"/>
-          </a>
-          <a aria-label="GitHub Profile" class="transition-transform duration-200 hover:scale-110" href="https://github.com/rithulraveendran">
-            <img src="icons/github.svg" alt="GitHub" class="h-12 w-12"/>
-          </a>
-          <a aria-label="Instagram Profile" class="transition-transform duration-200 hover:scale-110" href="https://www.instagram.com/rit.xul_/">
-            <img src="icons/instagram.svg" alt="Instagram" class="h-16 w-16"/>
-          </a>
-          <a aria-label="Instagram Frames Profile" class="transition-transform duration-200 hover:scale-110" href="https://www.instagram.com/framesbyrit/">
-            <img src="icons/frames.svg" alt="Instagram Frames" class="h-14 w-14"/>
-          </a>
-        </div>
-      </main>
-    </div>
-  </div>
-
+<!-- END: MainHeader -->
+<main class="pt-32">
+<!-- BEGIN: HeroSection -->
+<section class="max-w-5xl mx-auto px-6 mb-32 flex flex-col md:flex-row items-center gap-12">
+<!-- Profile Image Card -->
+<div class="w-full md:w-1/3 order-2 md:order-2">
+<div class="tilted-card bg-slate-900/70 p-3 rounded-3xl shadow-xl overflow-hidden border border-slate-800/80">
+<img alt="Rithul R Profile" class="w-full h-auto rounded-2xl object-cover aspect-[4/5] no-zoom" src="hero-profile.jpg" style="object-position: center;"/>
 </div>
-</body>
-</html>
+</div>
+<!-- Hero Text -->
+<div class="w-full md:w-2/3 order-1 md:order-1">
+<h1 class="text-4xl md:text-6xl font-bold leading-tight mb-8">
+          Hi &#128075;<br/>
+          I'm Rithul R, and I'm building at the intersection of AI and high-performance engineering!
+        </h1>
+<div class="flex flex-wrap gap-3">
+<span class="inline-flex items-center gap-2 px-4 py-2 bg-orange-50 text-orange-700 rounded-full text-sm font-semibold border border-orange-100">
+            &#129504; AIML Developer
+          </span>
+<span class="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-semibold border border-blue-100">
+            &#128736;&#65039; Systems Architect
+          </span>
+<span class="inline-flex items-center gap-2 px-4 py-2 bg-pink-50 text-pink-700 rounded-full text-sm font-semibold border border-pink-100">
+            &#128187; Vibe Coder
+          </span>
+</div>
+</div>
+</section>
+<!-- END: HeroSection -->
+<!-- BEGIN: WorkShowcaseHeader -->
+<section class="max-w-5xl mx-auto px-6 mb-12 text-center" id="work">
+<h2 class="text-3xl font-bold mb-2">Work Showcase</h2>
+<p class="text-slate-400 font-medium">My craft, condensed into the products I am proud of!</p>
+</section>
+<!-- END: WorkShowcaseHeader -->
+<!-- BEGIN: WorkShowcaseGrid -->
+<section class="max-w-5xl mx-auto px-6 mb-32">
+<div class="flex flex-col gap-16">
+<article class="space-y-6">
+<div>
+<p class="text-xs uppercase tracking-widest text-slate-400 font-semibold">Manas AI Showcase</p>
+<h3 class="text-2xl font-bold mt-2">Manas AI</h3>
+<p class="text-slate-400 mt-3">Manas AI is a Flask-powered web app that blends empathetic conversation with health-tracking. It uses Groq LLMs for sentiment analysis and integrates Google Fit data to provide personalized, wellness-aware support.<br/><span class="font-semibold text-slate-200">Tech Stack:</span> Python, Flask, Groq LLM, Firebase, Google Fit API.<br/><span class="font-semibold text-slate-200">Role:</span> Lead Developer (Full-stack).</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-4">
+<div class="lg:col-span-4 lg:row-start-1 rounded-2xl overflow-hidden border border-slate-800/70 bg-slate-900/60">
+<img alt="Manas AI Screen 01" class="w-full h-full object-cover aspect-[16/9]" src="ma2.png"/>
+</div>
+<div class="lg:col-span-5 lg:row-start-1 rounded-2xl border border-slate-800/70 bg-slate-900/60 p-4 flex items-center">
+<div class="w-full rounded-2xl bg-slate-800/70 p-4 text-sm text-slate-200 leading-relaxed">
+<strong class="block text-white mb-1">Short bio</strong>
+AI assistant for D2C founders with real-time insights and one-click actions.
+</div>
+</div>
+<div class="lg:col-span-3 lg:row-start-1 rounded-2xl overflow-hidden border border-slate-800/70 bg-slate-900/60">
+<img alt="Manas AI Screen 03" class="w-full h-full object-cover aspect-[16/9] block" src="ma3.png"/>
+</div>
+<div class="lg:col-span-4 lg:row-start-2 rounded-2xl overflow-hidden border border-slate-800/70 bg-slate-900/60">
+<img alt="Manas AI Screen 04" class="w-full h-auto object-contain" src="ma4.png"/>
+</div>
+<div class="lg:col-span-4 lg:row-start-2 rounded-2xl overflow-hidden border border-slate-800/70 bg-slate-900/60">
+<img alt="Manas AI Screen 05" class="w-full h-auto object-contain" src="ma5.png"/>
+</div>
+<div class="lg:col-span-4 lg:row-start-2 rounded-2xl overflow-hidden border border-slate-800/70 bg-slate-900/60">
+<img alt="Manas AI Screen 06" class="w-full h-auto object-contain" src="ma6.png"/>
+</div>
+<div class="lg:col-span-4 lg:row-start-3 rounded-2xl border border-slate-800/70 bg-slate-900/60 p-4 flex items-center">
+<div class="w-full rounded-2xl bg-slate-800/70 p-4 text-sm text-slate-200 leading-relaxed">
+<strong class="block text-white mb-1">What I Built</strong>
+Sentiment-aware responses + Google Fit context + action nudges.
+</div>
+</div>
+<div class="lg:col-span-8 lg:row-start-3 rounded-2xl overflow-hidden border border-slate-800/70 bg-slate-900/60">
+<img alt="Manas AI Screen 08" class="w-full h-auto object-contain" src="ma1.png"/>
+</div>
+</div>
+</article>
+
+<!-- <article class="space-y-6">
+<div>
+<p class="text-xs uppercase tracking-widest text-slate-400 font-semibold">JobAggregator</p>
+<h3 class="text-2xl font-bold mt-2">JobAggregator</h3>
+<p class="text-slate-400 mt-3">AI-Powered Career Intelligence. An automated recruitment platform that transforms unstructured job postings into structured, high-signal opportunities. It utilizes OCR and LLMs to parse screenshots, classifies roles via a custom taxonomy, and manages data integrity through a manual-review verification queue.<br/><span class="font-semibold text-slate-200">Tech Stack:</span> Next.js 15, MongoDB, Tesseract.js, OpenAI/Anthropic API, Cloudinary.<br/><span class="font-semibold text-slate-200">Key Focus:</span> Automated data ingestion, intelligent classification, and secure authentication.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-4">
+<div class="lg:col-span-4 lg:row-start-1 rounded-2xl overflow-hidden border border-slate-800/70 bg-slate-900/60">
+<img alt="Namma Yatri Profile" class="w-full h-full object-cover aspect-[16/9]" src="jobagg-profile.jpg"/>
+</div>
+<div class="lg:col-span-5 lg:row-start-1 rounded-2xl border border-slate-800/70 bg-slate-900/60 p-4 flex items-center">
+<div class="w-full rounded-2xl bg-slate-800/70 p-4 text-sm text-slate-200 leading-relaxed">
+<strong class="block text-white mb-1">Short bio</strong>
+Zero-commission mobility platform design from 0 to 1 across rider and driver journeys.
+</div>
+</div>
+<div class="lg:col-span-3 lg:row-start-1 rounded-2xl border border-slate-800/70 bg-slate-900/60 p-4">
+<img alt="JobAggregator Tools" class="w-full h-full object-contain rounded-xl aspect-[16/9]" src="jobagg-tools-01.jpg"/>
+</div>
+<div class="lg:col-span-4 lg:row-start-2 rounded-2xl overflow-hidden border border-slate-800/70 bg-slate-900/60 flex items-center justify-center">
+<div class="w-full h-full flex items-center justify-center text-xl font-bold text-slate-200 aspect-[16/9]">
+Product Designer
+</div>
+</div>
+<div class="lg:col-span-4 lg:row-start-2 rounded-2xl overflow-hidden border border-slate-800/70 bg-slate-900/60">
+<img alt="Namma Product 01" class="w-full h-full object-cover aspect-[16/9]" src="jobagg-product-01.jpg"/>
+</div>
+<div class="lg:col-span-4 lg:row-start-2 rounded-2xl overflow-hidden border border-slate-800/70 bg-slate-900/60">
+<img alt="Namma Product 02" class="w-full h-full object-cover aspect-[16/9]" src="jobagg-product-02.jpg"/>
+</div>
+<div class="lg:col-span-4 lg:row-start-3 rounded-2xl border border-slate-800/70 bg-slate-900/60 p-4 flex items-center">
+<div class="w-full rounded-2xl bg-slate-800/70 p-4 text-sm text-slate-200 leading-relaxed">
+<strong class="block text-white mb-1">Testimonial</strong>
+“Massive impact on conversion with a clean, trusted ride flow.”
+</div>
+</div>
+<div class="lg:col-span-8 lg:row-start-3 rounded-2xl overflow-hidden border border-slate-800/70 bg-slate-900/60">
+<img alt="Namma Video" class="w-full h-full object-cover aspect-[16/9]" src="manas-video.jpg"/>
+</div>
+</div>
+</article> -->
+
+<article class="space-y-6">
+<div>
+<p class="text-xs uppercase tracking-widest text-slate-400 font-semibold">CarbonLens AI</p>
+<h3 class="text-2xl font-bold mt-2">CarbonLens AI</h3>
+<p class="text-slate-400 mt-3">An enterprise-grade ESG platform designed to solve Scope 3 emissions tracking. It automates supplier data extraction from invoices using LLMs, provides a human-in-the-loop verification queue, and ensures SEBI BRSR compliance through deterministic emission mapping.<br/><span class="font-semibold text-slate-200">Tech Stack:</span> Python, Flask, Llama 3.3 (Groq), Firebase, RBAC.<br/><span class="font-semibold text-slate-200">Key Focus:</span> ESG compliance, NLP-driven data extraction, and audit-ready reporting.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-4">
+<div class="lg:col-span-4 lg:row-start-1 rounded-2xl overflow-hidden border border-slate-800/70 bg-slate-900/60">
+<img alt="CarbonLens Screen 01" class="w-full h-full object-cover aspect-[16/9]" src="ca01.png"/>
+</div>
+<div class="lg:col-span-5 lg:row-start-1 rounded-2xl border border-slate-800/70 bg-slate-900/60 p-4 flex items-center">
+<div class="w-full rounded-2xl bg-slate-800/70 p-4 text-sm text-slate-200 leading-relaxed">
+<strong class="block text-white mb-1">Short bio</strong>
+Scope 3 emissions platform with LLM invoice extraction and human-in-the-loop verification.
+</div>
+</div>
+<div class="lg:col-span-3 lg:row-start-1 rounded-2xl overflow-hidden border border-slate-800/70 bg-slate-900/60">
+<img alt="CarbonLens Tools" class="w-full h-full object-cover aspect-[16/9]" src="ca04.png"/>
+</div>
+<div class="lg:col-span-4 lg:row-start-2 rounded-2xl overflow-hidden border border-slate-800/70 bg-slate-900/60">
+<img alt="CarbonLens Screen 02" class="w-full h-auto object-contain" src="ca06.png"/>
+</div>
+<div class="lg:col-span-4 lg:row-start-2 rounded-2xl overflow-hidden border border-slate-800/70 bg-slate-900/60">
+<img alt="CarbonLens Screen 03" class="w-full h-auto object-contain" src="ca02.png"/>
+</div>
+<div class="lg:col-span-4 lg:row-start-2 rounded-2xl overflow-hidden border border-slate-800/70 bg-slate-900/60">
+<img alt="CarbonLens Screen 04" class="w-full h-auto object-contain" src="ca05.png"/>
+</div>
+<div class="lg:col-span-4 lg:row-start-3 rounded-2xl border border-slate-800/70 bg-slate-900/60 p-4 flex items-center">
+<div class="w-full rounded-2xl bg-slate-800/70 p-4 text-sm text-slate-200 leading-relaxed">
+<strong class="block text-white mb-1">What I Built</strong>
+NLP-driven extraction + verification queue + audit-ready reporting.
+</div>
+</div>
+<div class="lg:col-span-8 lg:row-start-3 rounded-2xl overflow-hidden border border-slate-800/70 bg-slate-900/60">
+<img alt="CarbonLens Screen 05" class="w-full h-auto object-contain" src="ca03.png"/>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- END: WorkShowcaseGrid -->
+<!-- BEGIN: Achievements -->
+<section class="max-w-7xl mx-auto px-6 mb-32">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold mb-2">Achievements</h2>
+<p class="text-gray-500 font-medium">Key milestones, certifications, and wins along the way.</p>
+</div>
+<div class="relative">
+<button aria-label="Previous" class="carousel-arrow absolute left-0 top-1/2 -translate-y-1/2 z-10 hidden sm:inline-flex rotate-180" data-dir="-1">
+<svg fill="currentColor" height="18" viewbox="0 0 16 16" width="18" xmlns="http://www.w3.org/2000/svg">
+<path d="m5 1 1.2 1.4L10.2 8l-4 5.6L5 15l8-7-8-7z"></path>
+</svg>
+</button>
+<div class="flex gap-6 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory px-12" id="achievementTrack">
+<div class="carousel-spacer" aria-hidden="true"></div>
+<div class="achievement-card snap-center min-w-[260px] sm:min-w-[320px] lg:min-w-[360px] bg-[#f2f4f7] rounded-2xl border border-gray-200/60 overflow-hidden">
+<img alt="Makeathon 2.0 Winner" class="w-full aspect-[16/9] object-cover" src="achv-makeathon.jpg"/>
+<div class="p-4 text-gray-800 font-semibold">Makeathon 2.0 Winner (CodeGeeks Team)</div>
+</div>
+<div class="achievement-card snap-center min-w-[260px] sm:min-w-[320px] lg:min-w-[360px] bg-[#f2f4f7] rounded-2xl border border-gray-200/60 overflow-hidden">
+<img alt="Foundations of Internet of Things" class="w-full aspect-[16/9] object-cover" src="achv-iot.png"/>
+<div class="p-4 text-gray-800 font-semibold">Foundations of Internet of Things (NASSCOM)</div>
+</div>
+<div class="achievement-card snap-center min-w-[260px] sm:min-w-[320px] lg:min-w-[360px] bg-[#f2f4f7] rounded-2xl border border-gray-200/60 overflow-hidden">
+<img alt="Create Your First Python Program" class="w-full aspect-[16/9] object-cover" src="achv-python.jpg"/>
+<div class="p-4 text-gray-800 font-semibold">Create Your First Python Program (UST / Coursera)</div>
+</div>
+<div class="achievement-card snap-center min-w-[260px] sm:min-w-[320px] lg:min-w-[360px] bg-[#f2f4f7] rounded-2xl border border-gray-200/60 overflow-hidden">
+<img alt="DBMS Course" class="w-full aspect-[16/9] object-cover" src="achv-dbms.jpg"/>
+<div class="p-4 text-gray-800 font-semibold">DBMS Course (Scaler)</div>
+</div>
+<div class="achievement-card snap-center min-w-[260px] sm:min-w-[320px] lg:min-w-[360px] bg-[#f2f4f7] rounded-2xl border border-gray-200/60 overflow-hidden">
+<img alt="Introduction to AI &amp; ML" class="w-full aspect-[16/9] object-cover" src="achv-aiml.png"/>
+<div class="p-4 text-gray-800 font-semibold">Introduction to AI &amp; ML (Infosys)</div>
+</div>
+<div class="carousel-spacer" aria-hidden="true"></div>
+</div>
+<button aria-label="Next" class="carousel-arrow absolute right-0 top-1/2 -translate-y-1/2 z-10 hidden sm:inline-flex" data-dir="1">
+<svg fill="currentColor" height="18" viewbox="0 0 16 16" width="18" xmlns="http://www.w3.org/2000/svg">
+<path d="m5 1 1.2 1.4L10.2 8l-4 5.6L5 15l8-7-8-7z"></path>
+</svg>
+</button>
+</div>
+</section>
+<!-- END: Achievements -->
+<!-- BEGIN: CallToActionBanner -->
+<section class="max-w-7xl mx-auto px-6 mb-32">
+<div class="bg-blue-50/50 border border-blue-100/50 rounded-[40px] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-12 overflow-hidden relative">
+<div class="max-w-md relative z-10">
+<h2 class="text-3xl font-bold mb-4">Want to dive deeper?</h2>
+<p class="text-gray-600 mb-8 leading-relaxed">
+            Check out detailed case studies on my LinkedIn or reach out for a personalized walkthrough of my projects!
+          </p>
+<div class="flex flex-wrap gap-4">
+<a class="bg-blue-600 text-white px-6 py-3 rounded-full font-bold flex items-center gap-2 hover:bg-blue-700 transition-all" href="https://www.linkedin.com/in/rithulraveendran/">
+<span class="font-sans font-black">in</span> View LinkedIn
+            </a>
+<a class="bg-white text-gray-800 px-6 py-3 rounded-full font-bold border border-gray-200 flex items-center gap-2 hover:bg-gray-50 transition-all" href="mailto:r.rithul@icloud.com">
+<svg fill="currentColor" height="18" viewbox="0 0 16 16" width="18" xmlns="http://www.w3.org/2000/svg">
+<path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-2.5a2 2 0 0 0-1.6.8L8 14.333 6.1 11.8a2 2 0 0 0-1.6-.8H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12z"></path>
+</svg>
+              Connect
+            </a>
+</div>
+</div>
+<!-- Decorative grid from IMAGE_6 -->
+<div class="md:w-2/5 w-full flex justify-center">
+<img alt="LinkedIn Preview" class="rounded-2xl shadow-lg rotate-2 translate-x-4 w-full max-w-md aspect-[16/9] object-cover" src="linkedin.jpeg"/>
+</div>
+</div>
+</section>
+<!-- END: CallToActionBanner -->
+<!-- BEGIN: AboutMeSection -->
+<section class="max-w-7xl mx-auto px-6 mb-32">
+<div class="bg-blue-50/50 border border-blue-100/50 rounded-[40px] p-8 md:p-16 flex flex-col lg:flex-row gap-16 shadow-sm">
+<div class="lg:w-1/2">
+<h2 class="text-3xl font-bold mb-8">About me</h2>
+<div class="space-y-6 text-gray-600 leading-relaxed text-lg font-medium">
+<p>
+              I'm a 1st-year AIML student at St. Joseph's, driven by the intersection of discipline and deep tech. My background as a Sainik School cadet instilled a structured, leadership-first mindset that I now apply to building intelligent software systems.
+            </p>
+<p>
+              When I'm not at my desk, you'll find me behind a camera lens, exploring aviation, Formula 1 strategy, or mechanical watches. Each of these pursuits is a study in craft and performance, fueling the way I approach code. Always shipping, always learning, and ready for the next challenge.
+            </p>
+</div>
+</div>
+<div class="lg:w-1/2">
+<!-- Auto-scrolling carousel -->
+<div class="about-carousel">
+<div class="about-column">
+<div class="about-track">
+<img alt="Life moment 1" class="about-photo rounded-3xl w-full h-auto" src="about-01.JPG"/>
+<img alt="Life moment 2" class="about-photo rounded-3xl w-full h-auto" src="about-02.JPG"/>
+<img alt="Life moment 3" class="about-photo rounded-3xl w-full h-auto" src="about-09.jpeg"/>
+<img alt="Life moment 4" class="about-photo rounded-3xl w-full h-auto" src="about-04.webp"/>
+<img alt="Life moment 5" class="about-photo rounded-3xl w-full h-auto" src="about-05.webp"/>
+<img alt="Life moment 1" class="about-photo rounded-3xl w-full h-auto" src="about-01.JPG"/>
+<img alt="Life moment 2" class="about-photo rounded-3xl w-full h-auto" src="about-02.JPG"/>
+<img alt="Life moment 3" class="about-photo rounded-3xl w-full h-auto" src="about-09.jpeg"/>
+<img alt="Life moment 4" class="about-photo rounded-3xl w-full h-auto" src="about-04.webp"/>
+<img alt="Life moment 5" class="about-photo rounded-3xl w-full h-auto" src="about-05.webp"/>
+</div>
+</div>
+<div class="about-column">
+<div class="about-track alt">
+<img alt="Life moment 6" class="about-photo rounded-3xl w-full h-auto" src="about-06.jpg"/>
+<img alt="Life moment 7" class="about-photo rounded-3xl w-full h-auto" src="about-07.jpeg"/>
+<img alt="Life moment 8" class="about-photo rounded-3xl w-full h-auto" src="about-08.jpeg"/>
+<img alt="Life moment 9" class="about-photo rounded-3xl w-full h-auto" src="about-09.jpeg"/>
+<img alt="Life moment 10" class="about-photo rounded-3xl w-full h-auto" src="about-10.jpeg"/>
+<img alt="Life moment 6" class="about-photo rounded-3xl w-full h-auto" src="about-06.jpg"/>
+<img alt="Life moment 7" class="about-photo rounded-3xl w-full h-auto" src="about-07.jpeg"/>
+<img alt="Life moment 8" class="about-photo rounded-3xl w-full h-auto" src="about-08.jpeg"/>
+<img alt="Life moment 9" class="about-photo rounded-3xl w-full h-auto" src="about-09.jpeg"/>
+<img alt="Life moment 10" class="about-photo rounded-3xl w-full h-auto" src="about-10.jpeg"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: AboutMeSection -->
+<!-- BEGIN: FooterCTA -->
+<section class="max-w-7xl mx-auto px-6 text-center mb-16">
+<h2 class="text-4xl md:text-5xl font-bold mb-10">Let's build incredible<br/>things together!</h2>
+<div class="flex flex-wrap justify-center items-center gap-4 mb-20">
+<a class="bg-[#0f172a] text-white px-6 py-3 rounded-xl font-mono text-sm flex items-center gap-3 hover:bg-slate-800 transition-all" href="mailto:r.rithul@icloud.com">
+<svg fill="currentColor" height="16" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"></path>
+</svg>
+          r.rithul@icloud.com
+        </a>
+<a class="bg-[#0A66C2] text-white p-3 rounded-xl hover:bg-[#0B5BB5] transition-all" href="https://www.linkedin.com/in/rithulraveendran/">
+<svg fill="currentColor" height="20" viewbox="0 0 16 16" width="20" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708C16 15.487 15.474 16 14.825 16H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.244c.837 0 1.358-.554 1.358-1.248-.015-.71-.521-1.248-1.342-1.248-.821 0-1.358.538-1.358 1.248 0 .694.521 1.248 1.326 1.248h.016zM13.458 13.394V9.359c0-2.159-1.152-3.162-2.688-3.162-1.238 0-1.788.687-2.099 1.168V6.169H6.27c.03.775 0 7.225 0 7.225h2.401v-4.034c0-.215.016-.43.08-.585.174-.43.571-.875 1.239-.875.873 0 1.222.66 1.222 1.626v3.868h2.246z"></path>
+</svg>
+</a>
+<a class="bg-[#181717] text-white p-3 rounded-xl hover:bg-[#2B2B2B] transition-all" href="https://github.com/rithulraveendran">
+<svg fill="currentColor" height="20" viewbox="0 0 16 16" width="20" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+</svg>
+</a>
+<a class="bg-[radial-gradient(circle_at_30%_30%,#ff4d8d_0%,#d62976_45%,#962fbf_70%,#4f5bd5_100%)] text-white p-3 rounded-xl transition-all shadow-[0_10px_20px_rgba(214,41,118,0.35)] hover:shadow-[0_14px_28px_rgba(214,41,118,0.45)]" href="https://www.instagram.com/rit.xul_">
+<svg fill="currentColor" height="20" viewbox="0 0 16 16" width="20" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 0C5.829 0 5.557.01 4.703.048 3.85.087 3.27.222 2.76.42a3.9 3.9 0 0 0-1.41.92A3.9 3.9 0 0 0 .42 2.76C.222 3.27.087 3.85.048 4.703.01 5.557 0 5.829 0 8c0 2.171.01 2.443.048 3.297.039.852.174 1.433.372 1.943.2.51.464.942.92 1.41.468.456.9.72 1.41.92.51.198 1.09.333 1.943.372C5.557 15.99 5.829 16 8 16c2.171 0 2.443-.01 3.297-.048.852-.039 1.433-.174 1.943-.372.51-.2.942-.464 1.41-.92.456-.468.72-.9.92-1.41.198-.51.333-1.09.372-1.943C15.99 10.443 16 10.171 16 8c0-2.171-.01-2.443-.048-3.297-.039-.852-.174-1.433-.372-1.943a3.9 3.9 0 0 0-.92-1.41 3.9 3.9 0 0 0-1.41-.92C12.73.222 12.15.087 11.297.048 10.443.01 10.171 0 8 0zm0 3.892A4.108 4.108 0 1 1 3.892 8 4.108 4.108 0 0 1 8 3.892zm0 6.769A2.661 2.661 0 1 0 5.339 8 2.661 2.661 0 0 0 8 10.661zm4.271-6.984a.96.96 0 1 1-.96-.96.96.96 0 0 1 .96.96z"></path>
+</svg>
+</a>
+<a class="bg-[radial-gradient(circle_at_30%_30%,#7c3aed_0%,#4f46e5_55%,#1f2937_100%)] text-white p-3 rounded-xl transition-all shadow-[0_8px_16px_rgba(79,70,229,0.25)] hover:shadow-[0_10px_20px_rgba(79,70,229,0.35)]" href="https://www.instagram.com/framesbyrit">
+<svg fill="currentColor" height="20" viewbox="0 0 16 16" width="20" xmlns="http://www.w3.org/2000/svg">
+<path d="M10.5 2.5h-5l-1 1H2.5a1 1 0 0 0-1 1V12a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V4.5a1 1 0 0 0-1-1H11.5l-1-1zm-2.5 9a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0-1.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"></path>
+</svg>
+</a>
+</div>
+</section>
+<!-- END: FooterCTA -->
+</main>
+<!-- BEGIN: MainFooter -->
+<footer class="max-w-7xl mx-auto px-6 py-12 border-t border-gray-100 flex flex-col md:flex-row justify-end items-center gap-6">
+<div class="flex items-center gap-2 ml-auto">
+<span class="text-xs font-bold uppercase tracking-widest text-gray-400">Back to Top</span>
+<a class="p-2 bg-gray-100 text-slate-700 rounded-lg hover:bg-gray-200 transition-colors" href="#">
+<svg fill="currentColor" height="16" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z" fill-rule="evenodd"></path>
+</svg>
+</a>
+</div>
+</footer>
+<!-- END: MainFooter -->
+<script>
+  (function () {
+    const track = document.getElementById('achievementTrack');
+    if (!track) return;
+
+    const cards = Array.from(track.querySelectorAll('.achievement-card'));
+    const arrows = Array.from(document.querySelectorAll('[data-dir]'));
+
+    const getStep = () => {
+      if (cards.length < 2) return cards[0]?.offsetWidth || 0;
+      return cards[1].offsetLeft - cards[0].offsetLeft;
+    };
+
+    const scrollToCard = (index) => {
+      const card = cards[index];
+      if (!card) return;
+      const left = card.offsetLeft - (track.clientWidth / 2 - card.offsetWidth / 2);
+      track.scrollTo({ left, behavior: 'smooth' });
+    };
+
+    const updateCenter = () => {
+      const center = track.scrollLeft + track.clientWidth / 2;
+      let closestIndex = 0;
+      let closestDistance = Infinity;
+
+      cards.forEach((card, index) => {
+        const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+        const distance = Math.abs(center - cardCenter);
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestIndex = index;
+        }
+      });
+
+      cards.forEach((card, index) => {
+        card.classList.toggle('is-center', index === closestIndex);
+      });
+    };
+
+    arrows.forEach((arrow) => {
+      arrow.addEventListener('click', () => {
+        const dir = Number(arrow.getAttribute('data-dir')) || 1;
+        track.scrollBy({ left: dir * getStep(), behavior: 'smooth' });
+      });
+    });
+
+
+    let rafId = null;
+    track.addEventListener('scroll', () => {
+      if (rafId) cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(updateCenter);
+    });
+
+    window.addEventListener('load', updateCenter);
+    updateCenter();
+  })();
+</script>
+</body></html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
