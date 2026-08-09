@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="viewport" content="width=1280">
 <title>Rithul R | Portfolio</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <style data-purpose="custom-fonts">
@@ -44,8 +44,6 @@
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 16px;
-      height: 520px;
-      overflow: hidden;
     }
     .about-column {
       position: relative;
@@ -91,10 +89,10 @@
       filter: none;
     }
     #achievementTrack {
-      scroll-padding-inline: clamp(16px, 50vw - 180px, 240px);
+      scroll-padding-inline: max(16px, calc(50% - 180px));
     }
     .carousel-spacer {
-      flex: 0 0 clamp(16px, 50vw - 180px, 240px);
+      flex: 0 0 max(16px, calc(50% - 180px));
     }
     .carousel-arrow {
       background: rgba(15, 23, 42, 0.75);
@@ -110,33 +108,20 @@
   </style>
 </head>
 <body class="text-slate-100 antialiased">
-<!-- BEGIN: MainHeader -->
-<header class="fixed top-0 left-0 right-0 z-50 px-6 py-4 flex justify-between items-center max-w-7xl mx-auto">
-<nav class="flex items-center gap-8 ml-auto">
-<a class="text-sm font-medium text-slate-300 hover:text-white transition-colors" href="resume.pdf">Resume</a>
-<a class="bg-[#0f172a] text-white px-5 py-2.5 rounded-full text-sm font-medium flex items-center gap-2 hover:bg-slate-800 transition-all" href="https://www.instagram.com/rit.xul_">
-<svg fill="currentColor" height="16" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
-<path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-2.5a2 2 0 0 0-1.6.8L8 14.333 6.1 11.8a2 2 0 0 0-1.6-.8H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2.5a1 1 0 0 1 .8.4l1.9 2.533a1 1 0 0 0 1.6 0l1.9-2.533a1 1 0 0 1 .8-.4H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"></path>
-</svg>
-        Let's Talk
-      </a>
-</nav>
-</header>
-<!-- END: MainHeader -->
+
 <main class="pt-32">
+
 <!-- BEGIN: HeroSection -->
 <section class="max-w-5xl mx-auto px-6 mb-32 flex flex-col md:flex-row items-center gap-12">
-<!-- Profile Image Card -->
 <div class="w-full md:w-1/3 order-2 md:order-2">
 <div class="tilted-card bg-slate-900/70 p-3 rounded-3xl shadow-xl overflow-hidden border border-slate-800/80">
-<img alt="Rithul R Profile" class="w-full h-auto rounded-2xl object-cover aspect-[4/5] no-zoom" src="hero-profile.jpg" style="object-position: center;"/>
+<img alt="Rithul R Profile" class="w-full h-auto rounded-2xl object-cover aspect-[4/5] no-zoom" src="images/profile.jpg" style="object-position: center;"/>
 </div>
 </div>
-<!-- Hero Text -->
 <div class="w-full md:w-2/3 order-1 md:order-1">
 <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-8">
-          Hi &#128075;<br/>
-          I'm Rithul, and I'm building at the intersection of AI and high-performance engineering!
+          Hey, I'm Rithul.<br/>
+          An AI Engineer building intelligent, high-performance systems.
         </h1>
 <div class="flex flex-wrap gap-3">
 <span class="inline-flex items-center gap-2 px-4 py-2 bg-orange-50 text-orange-700 rounded-full text-sm font-semibold border border-orange-100">
@@ -146,175 +131,13 @@
             &#128736;&#65039; Systems Architect
           </span>
 <span class="inline-flex items-center gap-2 px-4 py-2 bg-pink-50 text-pink-700 rounded-full text-sm font-semibold border border-pink-100">
-            &#128187; Vibe Coder
+            &#128187; Full-Stack Developer
           </span>
 </div>
 </div>
 </section>
 <!-- END: HeroSection -->
-<!-- BEGIN: WorkShowcaseHeader -->
-<section class="max-w-5xl mx-auto px-6 mb-12 text-center" id="work">
-<h2 class="text-3xl font-bold mb-2">Work Showcase</h2>
-<p class="text-slate-400 font-medium">My craft, condensed into the products I am proud of!</p>
-</section>
-<!-- END: WorkShowcaseHeader -->
-<!-- BEGIN: WorkShowcaseGrid -->
-<section class="max-w-5xl mx-auto px-6 mb-32">
-<div class="flex flex-col gap-16">
-<article class="space-y-6">
-<div>
-<p class="text-xs uppercase tracking-widest text-slate-400 font-semibold">Manas AI Showcase</p>
-<h3 class="text-2xl font-bold mt-2">Manas AI</h3>
-<p class="text-slate-400 mt-3">Manas AI is a Flask-powered web app that blends empathetic conversation with health-tracking. It uses Groq LLMs for sentiment analysis and integrates Google Fit data to provide personalized, wellness-aware support.<br/><span class="font-semibold text-slate-200">Tech Stack:</span> Python, Flask, Groq LLM, Firebase, Google Fit API.<br/><span class="font-semibold text-slate-200">Role:</span> Lead Developer (Full-stack).</p>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-4">
-<div class="lg:col-span-4 lg:row-start-1 rounded-2xl overflow-hidden border border-slate-800/70 bg-slate-900/60">
-<img alt="Manas AI Screen 01" class="w-full h-full object-cover aspect-[16/9]" src="ma2.png"/>
-</div>
-<div class="lg:col-span-5 lg:row-start-1 rounded-2xl border border-slate-800/70 bg-slate-900/60 p-4 flex items-center">
-<div class="w-full rounded-2xl bg-slate-800/70 p-4 text-sm text-slate-200 leading-relaxed">
-<strong class="block text-white mb-1">Short bio</strong>
-AI assistant for D2C founders with real-time insights and one-click actions.
-</div>
-</div>
-<div class="lg:col-span-3 lg:row-start-1 rounded-2xl overflow-hidden border border-slate-800/70 bg-slate-900/60">
-<img alt="Manas AI Screen 03" class="w-full h-full object-cover aspect-[16/9] block" src="ma3.png"/>
-</div>
-<div class="lg:col-span-4 lg:row-start-2 rounded-2xl overflow-hidden border border-slate-800/70 bg-slate-900/60">
-<img alt="Manas AI Screen 04" class="w-full h-auto object-contain" src="ma4.png"/>
-</div>
-<div class="lg:col-span-4 lg:row-start-2 rounded-2xl overflow-hidden border border-slate-800/70 bg-slate-900/60">
-<img alt="Manas AI Screen 05" class="w-full h-auto object-contain" src="ma5.png"/>
-</div>
-<div class="lg:col-span-4 lg:row-start-2 rounded-2xl overflow-hidden border border-slate-800/70 bg-slate-900/60">
-<img alt="Manas AI Screen 06" class="w-full h-auto object-contain" src="ma6.png"/>
-</div>
-<div class="lg:col-span-4 lg:row-start-3 rounded-2xl border border-slate-800/70 bg-slate-900/60 p-4 flex items-center">
-<div class="w-full rounded-2xl bg-slate-800/70 p-4 text-sm text-slate-200 leading-relaxed">
-<strong class="block text-white mb-1">What I Built</strong>
-Sentiment-aware responses + Google Fit context + action nudges.
-</div>
-</div>
-<div class="lg:col-span-8 lg:row-start-3 rounded-2xl overflow-hidden border border-slate-800/70 bg-slate-900/60">
-<img alt="Manas AI Screen 08" class="w-full h-auto object-contain" src="ma1.png"/>
-</div>
-</div>
-</article>
 
-
-<article class="space-y-6">
-<div>
-<p class="text-xs uppercase tracking-widest text-slate-400 font-semibold">CarbonLens AI</p>
-<h3 class="text-2xl font-bold mt-2">CarbonLens AI</h3>
-<p class="text-slate-400 mt-3">An enterprise-grade ESG platform designed to solve Scope 3 emissions tracking. It automates supplier data extraction from invoices using LLMs, provides a human-in-the-loop verification queue, and ensures SEBI BRSR compliance through deterministic emission mapping.<br/><span class="font-semibold text-slate-200">Tech Stack:</span> Python, Flask, Llama 3.3 (Groq), Firebase, RBAC.<br/><span class="font-semibold text-slate-200">Key Focus:</span> ESG compliance, NLP-driven data extraction, and audit-ready reporting.</p>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-4">
-<div class="lg:col-span-4 lg:row-start-1 rounded-2xl overflow-hidden border border-slate-800/70 bg-slate-900/60">
-<img alt="CarbonLens Screen 01" class="w-full h-full object-cover aspect-[16/9]" src="ca01.png"/>
-</div>
-<div class="lg:col-span-5 lg:row-start-1 rounded-2xl border border-slate-800/70 bg-slate-900/60 p-4 flex items-center">
-<div class="w-full rounded-2xl bg-slate-800/70 p-4 text-sm text-slate-200 leading-relaxed">
-<strong class="block text-white mb-1">Short bio</strong>
-Scope 3 emissions platform with LLM invoice extraction and human-in-the-loop verification.
-</div>
-</div>
-<div class="lg:col-span-3 lg:row-start-1 rounded-2xl overflow-hidden border border-slate-800/70 bg-slate-900/60">
-<img alt="CarbonLens Tools" class="w-full h-full object-cover aspect-[16/9]" src="ca04.png"/>
-</div>
-<div class="lg:col-span-4 lg:row-start-2 rounded-2xl overflow-hidden border border-slate-800/70 bg-slate-900/60">
-<img alt="CarbonLens Screen 02" class="w-full h-auto object-contain" src="ca06.png"/>
-</div>
-<div class="lg:col-span-4 lg:row-start-2 rounded-2xl overflow-hidden border border-slate-800/70 bg-slate-900/60">
-<img alt="CarbonLens Screen 03" class="w-full h-auto object-contain" src="ca02.png"/>
-</div>
-<div class="lg:col-span-4 lg:row-start-2 rounded-2xl overflow-hidden border border-slate-800/70 bg-slate-900/60">
-<img alt="CarbonLens Screen 04" class="w-full h-auto object-contain" src="ca05.png"/>
-</div>
-<div class="lg:col-span-4 lg:row-start-3 rounded-2xl border border-slate-800/70 bg-slate-900/60 p-4 flex items-center">
-<div class="w-full rounded-2xl bg-slate-800/70 p-4 text-sm text-slate-200 leading-relaxed">
-<strong class="block text-white mb-1">What I Built</strong>
-NLP-driven extraction + verification queue + audit-ready reporting.
-</div>
-</div>
-<div class="lg:col-span-8 lg:row-start-3 rounded-2xl overflow-hidden border border-slate-800/70 bg-slate-900/60">
-<img alt="CarbonLens Screen 05" class="w-full h-auto object-contain" src="ca03.png"/>
-</div>
-</div>
-</article>
-</div>
-</section>
-<!-- END: WorkShowcaseGrid -->
-<!-- BEGIN: Achievements -->
-<section class="max-w-7xl mx-auto px-6 mb-32">
-<div class="text-center mb-16">
-<h2 class="text-3xl font-bold mb-2">Achievements</h2>
-<p class="text-gray-500 font-medium">Key milestones, certifications, and wins along the way.</p>
-</div>
-<div class="relative">
-<button aria-label="Previous" class="carousel-arrow absolute left-0 top-1/2 -translate-y-1/2 z-10 hidden sm:inline-flex rotate-180" data-dir="-1">
-<svg fill="currentColor" height="18" viewbox="0 0 16 16" width="18" xmlns="http://www.w3.org/2000/svg">
-<path d="m5 1 1.2 1.4L10.2 8l-4 5.6L5 15l8-7-8-7z"></path>
-</svg>
-</button>
-<div class="flex gap-6 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory px-12" id="achievementTrack">
-<div class="carousel-spacer" aria-hidden="true"></div>
-<div class="achievement-card snap-center min-w-[260px] sm:min-w-[320px] lg:min-w-[360px] bg-[#f2f4f7] rounded-2xl border border-gray-200/60 overflow-hidden">
-<img alt="Makeathon 2.0 Winner" class="w-full aspect-[16/9] object-cover" src="achv-makeathon.jpg"/>
-<div class="p-4 text-gray-800 font-semibold">Makeathon 2.0 Winner (CodeGeeks Team)</div>
-</div>
-<div class="achievement-card snap-center min-w-[260px] sm:min-w-[320px] lg:min-w-[360px] bg-[#f2f4f7] rounded-2xl border border-gray-200/60 overflow-hidden">
-<img alt="Foundations of Internet of Things" class="w-full aspect-[16/9] object-cover" src="achv-iot.png"/>
-<div class="p-4 text-gray-800 font-semibold">Foundations of Internet of Things (NASSCOM)</div>
-</div>
-<div class="achievement-card snap-center min-w-[260px] sm:min-w-[320px] lg:min-w-[360px] bg-[#f2f4f7] rounded-2xl border border-gray-200/60 overflow-hidden">
-<img alt="Create Your First Python Program" class="w-full aspect-[16/9] object-cover" src="achv-python.jpg"/>
-<div class="p-4 text-gray-800 font-semibold">Create Your First Python Program (UST / Coursera)</div>
-</div>
-<div class="achievement-card snap-center min-w-[260px] sm:min-w-[320px] lg:min-w-[360px] bg-[#f2f4f7] rounded-2xl border border-gray-200/60 overflow-hidden">
-<img alt="DBMS Course" class="w-full aspect-[16/9] object-cover" src="achv-dbms.jpg"/>
-<div class="p-4 text-gray-800 font-semibold">DBMS Course (Scaler)</div>
-</div>
-<div class="achievement-card snap-center min-w-[260px] sm:min-w-[320px] lg:min-w-[360px] bg-[#f2f4f7] rounded-2xl border border-gray-200/60 overflow-hidden">
-<img alt="Introduction to AI &amp; ML" class="w-full aspect-[16/9] object-cover" src="achv-aiml.png"/>
-<div class="p-4 text-gray-800 font-semibold">Introduction to AI &amp; ML (Infosys)</div>
-</div>
-<div class="carousel-spacer" aria-hidden="true"></div>
-</div>
-<button aria-label="Next" class="carousel-arrow absolute right-0 top-1/2 -translate-y-1/2 z-10 hidden sm:inline-flex" data-dir="1">
-<svg fill="currentColor" height="18" viewbox="0 0 16 16" width="18" xmlns="http://www.w3.org/2000/svg">
-<path d="m5 1 1.2 1.4L10.2 8l-4 5.6L5 15l8-7-8-7z"></path>
-</svg>
-</button>
-</div>
-</section>
-<!-- END: Achievements -->
-<!-- BEGIN: CallToActionBanner -->
-<section class="max-w-7xl mx-auto px-6 mb-32">
-<div class="bg-blue-50/50 border border-blue-100/50 rounded-[40px] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-12 overflow-hidden relative">
-<div class="max-w-md relative z-10">
-<h2 class="text-3xl font-bold mb-4">Want to dive deeper?</h2>
-<p class="text-gray-600 mb-8 leading-relaxed">
-            Check out detailed case studies on my LinkedIn or reach out for a personalized walkthrough of my projects!
-          </p>
-<div class="flex flex-wrap gap-4">
-<a class="bg-blue-600 text-white px-6 py-3 rounded-full font-bold flex items-center gap-2 hover:bg-blue-700 transition-all" href="https://www.linkedin.com/in/rithulraveendran/">
-<span class="font-sans font-black">in</span> View LinkedIn
-            </a>
-<a class="bg-white text-gray-800 px-6 py-3 rounded-full font-bold border border-gray-200 flex items-center gap-2 hover:bg-gray-50 transition-all" href="mailto:r.rithul@icloud.com">
-<svg fill="currentColor" height="18" viewbox="0 0 16 16" width="18" xmlns="http://www.w3.org/2000/svg">
-<path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-2.5a2 2 0 0 0-1.6.8L8 14.333 6.1 11.8a2 2 0 0 0-1.6-.8H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12z"></path>
-</svg>
-              Connect
-            </a>
-</div>
-</div>
-<!-- Decorative grid from IMAGE_6 -->
-<div class="md:w-2/5 w-full flex justify-center">
-<img alt="LinkedIn Preview" class="rounded-2xl shadow-lg rotate-2 translate-x-4 w-full max-w-md aspect-[16/9] object-cover" src="linkedin.jpeg"/>
-</div>
-</div>
-</section>
-<!-- END: CallToActionBanner -->
 <!-- BEGIN: AboutMeSection -->
 <section class="max-w-7xl mx-auto px-6 mb-32">
 <div class="bg-blue-50/50 border border-blue-100/50 rounded-[40px] p-8 md:p-16 flex flex-col lg:flex-row gap-16 shadow-sm">
@@ -322,42 +145,66 @@ NLP-driven extraction + verification queue + audit-ready reporting.
 <h2 class="text-3xl font-bold mb-8">About me</h2>
 <div class="space-y-6 text-gray-600 leading-relaxed text-lg font-medium">
 <p>
-              I'm a 1st-year AIML student at St. Joseph's, driven by the intersection of discipline and deep tech. My background as a Sainik School cadet instilled a structured, leadership-first mindset that I now apply to building intelligent software systems.
+              Hey, I'm Rithul—an AI & Machine Learning student at St. Joseph's College of Engineering and a Sainik School Kazhakootam alum.
             </p>
 <p>
-              When I'm not at my desk, you'll find me behind a camera lens, exploring aviation, Formula 1 strategy, or mechanical watches. Each of these pursuits is a study in craft and performance, fueling the way I approach code. Always shipping, always learning, and ready for the next challenge.
+              My main focus is on turning ideas into functional software that makes a real-world impact. I spend a lot of my time writing code, competing in hackathons, and diving deep into backend development, cloud computing, and AI systems. I enjoy solving complex, practical problems, collaborating with other builders, and constantly pushing myself to learn and ship better code every day.
             </p>
+<div class="mt-8 pt-8 border-t border-blue-200/50">
+  <h3 class="text-xl font-bold text-gray-800 mb-4">Core Skills & Tools</h3>
+  <div class="flex flex-wrap gap-2 text-gray-700">
+    <span class="px-3 py-1 bg-white border border-gray-200 shadow-sm rounded-full text-sm">Python</span>
+    <span class="px-3 py-1 bg-white border border-gray-200 shadow-sm rounded-full text-sm">C</span>
+    <span class="px-3 py-1 bg-white border border-gray-200 shadow-sm rounded-full text-sm">C++</span>
+    <span class="px-3 py-1 bg-white border border-gray-200 shadow-sm rounded-full text-sm">HTML</span>
+    <span class="px-3 py-1 bg-white border border-gray-200 shadow-sm rounded-full text-sm">Flask</span>
+    <span class="px-3 py-1 bg-white border border-gray-200 shadow-sm rounded-full text-sm">Git</span>
+    <span class="px-3 py-1 bg-white border border-gray-200 shadow-sm rounded-full text-sm">VS Code</span>
+    <span class="px-3 py-1 bg-white border border-gray-200 shadow-sm rounded-full text-sm">DBMS</span>
+    <span class="px-3 py-1 bg-white border border-gray-200 shadow-sm rounded-full text-sm">Problem Solving</span>
+    <span class="px-3 py-1 bg-white border border-gray-200 shadow-sm rounded-full text-sm">AWS</span>
+    <span class="px-3 py-1 bg-white border border-gray-200 shadow-sm rounded-full text-sm">Cloud Computing</span>
+    <span class="px-3 py-1 bg-white border border-gray-200 shadow-sm rounded-full text-sm">Machine Learning</span>
+    <span class="px-3 py-1 bg-white border border-gray-200 shadow-sm rounded-full text-sm">NLP</span>
+    <span class="px-3 py-1 bg-white border border-gray-200 shadow-sm rounded-full text-sm">Linux</span>
+    <span class="px-3 py-1 bg-white border border-gray-200 shadow-sm rounded-full text-sm">IoT</span>
+  </div>
 </div>
 </div>
-<div class="lg:w-1/2">
+</div>
+<div class="lg:w-1/2 relative min-h-[520px]">
 <!-- Auto-scrolling carousel -->
-<div class="about-carousel">
+<div class="about-carousel absolute inset-0 rounded-[28px]" style="overflow: hidden;">
 <div class="about-column">
 <div class="about-track">
-<img alt="Life moment 1" class="about-photo rounded-3xl w-full h-auto" src="about-01.JPG"/>
-<img alt="Life moment 2" class="about-photo rounded-3xl w-full h-auto" src="about-02.JPG"/>
-<img alt="Life moment 3" class="about-photo rounded-3xl w-full h-auto" src="about-09.jpeg"/>
-<img alt="Life moment 4" class="about-photo rounded-3xl w-full h-auto" src="about-04.webp"/>
-<img alt="Life moment 5" class="about-photo rounded-3xl w-full h-auto" src="about-05.webp"/>
-<img alt="Life moment 1" class="about-photo rounded-3xl w-full h-auto" src="about-01.JPG"/>
-<img alt="Life moment 2" class="about-photo rounded-3xl w-full h-auto" src="about-02.JPG"/>
-<img alt="Life moment 3" class="about-photo rounded-3xl w-full h-auto" src="about-09.jpeg"/>
-<img alt="Life moment 4" class="about-photo rounded-3xl w-full h-auto" src="about-04.webp"/>
-<img alt="Life moment 5" class="about-photo rounded-3xl w-full h-auto" src="about-05.webp"/>
+<img alt="Life moment" class="about-photo rounded-3xl w-full h-auto" src="images/about-1.webp"/>
+<img alt="Life moment" class="about-photo rounded-3xl w-full h-auto" src="images/about-4.jpeg"/>
+<img alt="Life moment" class="about-photo rounded-3xl w-full h-auto" src="images/about-1.webp"/>
+<img alt="Life moment" class="about-photo rounded-3xl w-full h-auto" src="images/about-4.jpeg"/>
+<img alt="Life moment" class="about-photo rounded-3xl w-full h-auto" src="images/about-1.webp"/>
+<img alt="Life moment" class="about-photo rounded-3xl w-full h-auto" src="images/about-4.jpeg"/>
+<img alt="Life moment" class="about-photo rounded-3xl w-full h-auto" src="images/about-1.webp"/>
+<img alt="Life moment" class="about-photo rounded-3xl w-full h-auto" src="images/about-4.jpeg"/>
+<img alt="Life moment" class="about-photo rounded-3xl w-full h-auto" src="images/about-1.webp"/>
+<img alt="Life moment" class="about-photo rounded-3xl w-full h-auto" src="images/about-4.jpeg"/>
+<img alt="Life moment" class="about-photo rounded-3xl w-full h-auto" src="images/about-1.webp"/>
+<img alt="Life moment" class="about-photo rounded-3xl w-full h-auto" src="images/about-4.jpeg"/>
 </div>
 </div>
 <div class="about-column">
 <div class="about-track alt">
-<img alt="Life moment 6" class="about-photo rounded-3xl w-full h-auto" src="about-06.jpg"/>
-<img alt="Life moment 7" class="about-photo rounded-3xl w-full h-auto" src="about-07.jpeg"/>
-<img alt="Life moment 8" class="about-photo rounded-3xl w-full h-auto" src="about-08.jpeg"/>
-<img alt="Life moment 9" class="about-photo rounded-3xl w-full h-auto" src="about-09.jpeg"/>
-<img alt="Life moment 10" class="about-photo rounded-3xl w-full h-auto" src="about-10.jpeg"/>
-<img alt="Life moment 6" class="about-photo rounded-3xl w-full h-auto" src="about-06.jpg"/>
-<img alt="Life moment 7" class="about-photo rounded-3xl w-full h-auto" src="about-07.jpeg"/>
-<img alt="Life moment 8" class="about-photo rounded-3xl w-full h-auto" src="about-08.jpeg"/>
-<img alt="Life moment 9" class="about-photo rounded-3xl w-full h-auto" src="about-09.jpeg"/>
-<img alt="Life moment 10" class="about-photo rounded-3xl w-full h-auto" src="about-10.jpeg"/>
+<img alt="Life moment" class="about-photo rounded-3xl w-full h-auto" src="images/about-2.jpg"/>
+<img alt="Life moment" class="about-photo rounded-3xl w-full h-auto" src="images/about-5.jpeg"/>
+<img alt="Life moment" class="about-photo rounded-3xl w-full h-auto" src="images/about-2.jpg"/>
+<img alt="Life moment" class="about-photo rounded-3xl w-full h-auto" src="images/about-5.jpeg"/>
+<img alt="Life moment" class="about-photo rounded-3xl w-full h-auto" src="images/about-2.jpg"/>
+<img alt="Life moment" class="about-photo rounded-3xl w-full h-auto" src="images/about-5.jpeg"/>
+<img alt="Life moment" class="about-photo rounded-3xl w-full h-auto" src="images/about-2.jpg"/>
+<img alt="Life moment" class="about-photo rounded-3xl w-full h-auto" src="images/about-5.jpeg"/>
+<img alt="Life moment" class="about-photo rounded-3xl w-full h-auto" src="images/about-2.jpg"/>
+<img alt="Life moment" class="about-photo rounded-3xl w-full h-auto" src="images/about-5.jpeg"/>
+<img alt="Life moment" class="about-photo rounded-3xl w-full h-auto" src="images/about-2.jpg"/>
+<img alt="Life moment" class="about-photo rounded-3xl w-full h-auto" src="images/about-5.jpeg"/>
 </div>
 </div>
 </div>
@@ -365,45 +212,281 @@ NLP-driven extraction + verification queue + audit-ready reporting.
 </div>
 </section>
 <!-- END: AboutMeSection -->
+
+<!-- BEGIN: ExperienceSection -->
+<section class="max-w-5xl mx-auto px-6 mb-32">
+  <div class="mb-12 text-center">
+    <h2 class="text-3xl font-bold mb-2">Experience</h2>
+    <p class="text-slate-400 font-medium">My professional journey</p>
+  </div>
+  <div class="space-y-8">
+    <div class="border border-slate-800/70 bg-slate-900/60 rounded-2xl p-8 relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+      <div class="relative z-10 flex flex-col md:flex-row md:items-start justify-between gap-4">
+        <div>
+          <h3 class="text-2xl font-bold text-white">AI Engineer Intern</h3>
+          <p class="text-lg text-blue-400 font-semibold mt-1">BitBridge Technologies</p>
+        </div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-slate-800/80 rounded-full text-sm text-slate-300 font-medium whitespace-nowrap">
+          15 Jun 2026 &ndash; 30 Jun 2026
+        </div>
+      </div>
+      <ul class="relative z-10 mt-6 space-y-3 text-slate-300 text-sm leading-relaxed list-disc list-inside marker:text-slate-600">
+        <li>Implemented object detection algorithms for HawkSight, an in-house AI camera product, using standard computer vision models such as YOLO.</li>
+        <li>Installed and configured OS and toolchains on embedded hardware for on-device model deployment.</li>
+        <li>Collaborated with team leaders on software development planning and execution, gaining hands-on professional experience.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!-- END: ExperienceSection -->
+
+<!-- BEGIN: Achievements -->
+<section class="max-w-7xl mx-auto px-6 mb-32">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold mb-2">Achievements</h2>
+<p class="text-gray-500 font-medium">Key milestones, certifications, and wins along the way.</p>
+</div>
+<div class="relative">
+<button aria-label="Previous" class="carousel-arrow absolute left-0 top-1/2 -translate-y-1/2 z-10 hidden sm:inline-flex hover:bg-slate-800 transition-colors" data-dir="-1">
+<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" height="20" width="20" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>
+</button>
+<div class="flex gap-6 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory px-12" id="achievementTrack">
+<div class="carousel-spacer" aria-hidden="true"></div>
+<div class="achievement-card snap-center cursor-pointer min-w-[260px] sm:min-w-[320px] lg:min-w-[360px] bg-[#f2f4f7] rounded-2xl border border-gray-200/60 overflow-hidden flex flex-col justify-between" onclick="openModal(this)">
+<img alt="BitBridge Technologies Offer Letter" class="w-full aspect-[16/9] object-contain bg-white" src="images/offer-letter.jpg"/>
+<div class="p-4 text-gray-800 font-semibold">AI Engineer Intern Offer Letter</div>
+</div>
+<div class="achievement-card snap-center cursor-pointer min-w-[260px] sm:min-w-[320px] lg:min-w-[360px] bg-[#f2f4f7] rounded-2xl border border-gray-200/60 overflow-hidden flex flex-col justify-between" onclick="openModal(this)">
+<img alt="AWS ML for NLP" class="w-full aspect-[16/9] object-contain bg-white" src="images/cert-aws-ml.jpg"/>
+<div class="p-4 text-gray-800 font-semibold">AWS Machine Learning for NLP</div>
+</div>
+<div class="achievement-card snap-center cursor-pointer min-w-[260px] sm:min-w-[320px] lg:min-w-[360px] bg-[#f2f4f7] rounded-2xl border border-gray-200/60 overflow-hidden flex flex-col justify-between" onclick="openModal(this)">
+<img alt="AWS Cloud Foundations" class="w-full aspect-[16/9] object-contain bg-white" src="images/cert-aws-cloud.jpg"/>
+<div class="p-4 text-gray-800 font-semibold">AWS Cloud Foundations</div>
+</div>
+<div class="achievement-card snap-center cursor-pointer min-w-[260px] sm:min-w-[320px] lg:min-w-[360px] bg-[#f2f4f7] rounded-2xl border border-gray-200/60 overflow-hidden flex flex-col justify-between" onclick="openModal(this)">
+<img alt="AWS Cloud Operations" class="w-full aspect-[16/9] object-contain bg-white" src="images/cert-aws-ops.jpg"/>
+<div class="p-4 text-gray-800 font-semibold">AWS Cloud Operations</div>
+</div>
+<div class="achievement-card snap-center cursor-pointer min-w-[260px] sm:min-w-[320px] lg:min-w-[360px] bg-[#f2f4f7] rounded-2xl border border-gray-200/60 overflow-hidden flex flex-col justify-between" onclick="openModal(this)">
+<img alt="Makeathon 2.0 Winner" class="w-full aspect-[16/9] object-contain bg-white" src="images/award-makeathon.jpg"/>
+<div class="p-4 text-gray-800 font-semibold">Makeathon 2.0 Winner</div>
+</div>
+<div class="achievement-card snap-center cursor-pointer min-w-[260px] sm:min-w-[320px] lg:min-w-[360px] bg-[#f2f4f7] rounded-2xl border border-gray-200/60 overflow-hidden flex flex-col justify-between" onclick="openModal(this)">
+<img alt="Makeathon 3.0 Winner" class="w-full aspect-[16/9] object-contain bg-white" src="images/award-makeathon3.jpg"/>
+<div class="p-4 text-gray-800 font-semibold">Makeathon 3.0 Winner</div>
+</div>
+<div class="achievement-card snap-center cursor-pointer min-w-[260px] sm:min-w-[320px] lg:min-w-[360px] bg-[#f2f4f7] rounded-2xl border border-gray-200/60 overflow-hidden flex flex-col justify-between" onclick="openModal(this)">
+<img alt="Linux Unhatched" class="w-full aspect-[16/9] object-contain bg-white" src="images/cert-linux.jpg"/>
+<div class="p-4 text-gray-800 font-semibold">Linux Unhatched (Cisco)</div>
+</div>
+<div class="achievement-card snap-center cursor-pointer min-w-[260px] sm:min-w-[320px] lg:min-w-[360px] bg-[#f2f4f7] rounded-2xl border border-gray-200/60 overflow-hidden flex flex-col justify-between" onclick="openModal(this)">
+<img alt="Introduction to AI &amp; ML" class="w-full aspect-[16/9] object-contain bg-white" src="images/cert-aiml.png"/>
+<div class="p-4 text-gray-800 font-semibold">Introduction to AI &amp; ML (Infosys)</div>
+</div>
+<div class="achievement-card snap-center cursor-pointer min-w-[260px] sm:min-w-[320px] lg:min-w-[360px] bg-[#f2f4f7] rounded-2xl border border-gray-200/60 overflow-hidden flex flex-col justify-between" onclick="openModal(this)">
+<img alt="Foundations of Internet of Things" class="w-full aspect-[16/9] object-contain bg-white" src="images/cert-iot.png"/>
+<div class="p-4 text-gray-800 font-semibold">Foundations of Internet of Things</div>
+</div>
+<div class="achievement-card snap-center cursor-pointer min-w-[260px] sm:min-w-[320px] lg:min-w-[360px] bg-[#f2f4f7] rounded-2xl border border-gray-200/60 overflow-hidden flex flex-col justify-between" onclick="openModal(this)">
+<img alt="NPTEL Python for Data Science" class="w-full aspect-[16/9] object-contain bg-white" src="images/cert-nptel.jpg"/>
+<div class="p-4 text-gray-800 font-semibold">NPTEL Python for Data Science</div>
+</div>
+<div class="carousel-spacer" aria-hidden="true"></div>
+</div>
+<button aria-label="Next" class="carousel-arrow absolute right-0 top-1/2 -translate-y-1/2 z-10 hidden sm:inline-flex hover:bg-slate-800 transition-colors" data-dir="1">
+<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" height="20" width="20" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
+</button>
+</div>
+</section>
+<!-- END: Achievements -->
+
+<!-- BEGIN: WorkShowcaseHeader -->
+<section class="max-w-5xl mx-auto px-6 mb-12 text-center" id="work">
+<h2 class="text-3xl font-bold mb-2">Work Showcase</h2>
+<p class="text-slate-400 font-medium">My craft, condensed into the products I am proud of!</p>
+</section>
+<!-- END: WorkShowcaseHeader -->
+
+<!-- BEGIN: WorkShowcaseGrid -->
+<section class="max-w-5xl mx-auto px-6 mb-32">
+<div class="flex flex-col gap-16">
+
+<article class="space-y-6">
+<div>
+<p class="text-xs uppercase tracking-widest text-slate-400 font-semibold">Mrithasanjeevani</p>
+<h3 class="text-2xl font-bold mt-2">Mrithasanjeevani</h3>
+<p class="text-slate-400 mt-3">A healthcare platform connecting patients, doctors, pharmacists, and health workers for rural medical support.<br/><span class="font-semibold text-slate-200">Key Features:</span> AI-powered voice assistance, multilingual support, and emergency SOS features with real-time location tracking.</p>
+</div>
+<div class="grid grid-cols-1 gap-4">
+  <div class="rounded-2xl border border-slate-800/70 bg-slate-900/60 p-6 flex flex-col sm:flex-row items-center gap-6 justify-between hover:border-blue-500/50 transition-colors">
+    <div class="flex items-center gap-4 text-slate-200">
+      <div class="p-4 bg-blue-500/10 rounded-xl text-blue-400">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+      </div>
+      <div>
+        <h4 class="text-lg font-bold">Rural Telemedicine Platform</h4>
+        <p class="text-sm text-slate-400 mt-1">Bridging the healthcare gap with AI and real-time connectivity.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</article>
+
+<article class="space-y-6">
+<div>
+<p class="text-xs uppercase tracking-widest text-slate-400 font-semibold">Manas AI Showcase</p>
+<h3 class="text-2xl font-bold mt-2">Manas AI</h3>
+<p class="text-slate-400 mt-3">Manas AI is a Flask-powered web app that blends empathetic conversation with health-tracking. It uses Groq LLMs for sentiment analysis and integrates Google Fit data to provide personalized, wellness-aware support.<br/><span class="font-semibold text-slate-200">Tech Stack:</span> Python, Flask, Groq LLM, Firebase, Google Fit API.<br/><span class="font-semibold text-slate-200">Role:</span> Lead Developer (Full-stack).</p>
+</div>
+<div class="grid grid-cols-1 gap-4">
+  <a href="https://github.com/rithulraveendran/manas" target="_blank" rel="noopener noreferrer" class="group block rounded-2xl border border-slate-800/70 bg-slate-900/60 p-6 flex flex-col sm:flex-row items-center gap-6 justify-between hover:border-emerald-500/50 transition-colors cursor-pointer">
+    <div class="flex items-center gap-4 text-slate-200">
+      <div class="p-4 bg-emerald-500/10 rounded-xl text-emerald-400">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+      </div>
+      <div>
+        <h4 class="text-lg font-bold flex items-center gap-2">Student Mental Wellness Assistant <svg class="w-4 h-4 text-emerald-500 opacity-50 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg></h4>
+        <p class="text-sm text-slate-400 mt-1">AI-based mental wellness platform with mood tracking and emergency protocols.</p>
+      </div>
+    </div>
+  </a>
+</div>
+</article>
+
+<article class="space-y-6">
+<div>
+<p class="text-xs uppercase tracking-widest text-slate-400 font-semibold">CarbonLens AI</p>
+<h3 class="text-2xl font-bold mt-2">CarbonLens AI</h3>
+<p class="text-slate-400 mt-3">An enterprise-grade ESG platform designed to solve Scope 3 emissions tracking. It automates supplier data extraction from invoices using LLMs, provides a human-in-the-loop verification queue, and ensures SEBI BRSR compliance through deterministic emission mapping.<br/><span class="font-semibold text-slate-200">Tech Stack:</span> Python, Flask, Llama 3.3 (Groq), Firebase, RBAC.<br/><span class="font-semibold text-slate-200">Key Focus:</span> ESG compliance, NLP-driven data extraction, and audit-ready reporting.</p>
+</div>
+<div class="grid grid-cols-1 gap-4">
+  <a href="https://github.com/rithulraveendran/carbonlens-ai" target="_blank" rel="noopener noreferrer" class="group block rounded-2xl border border-slate-800/70 bg-slate-900/60 p-6 flex flex-col sm:flex-row items-center gap-6 justify-between hover:border-green-500/50 transition-colors cursor-pointer">
+    <div class="flex items-center gap-4 text-slate-200">
+      <div class="p-4 bg-green-500/10 rounded-xl text-green-400">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+      </div>
+      <div>
+        <h4 class="text-lg font-bold flex items-center gap-2">Sustainability Reporting Platform <svg class="w-4 h-4 text-green-500 opacity-50 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg></h4>
+        <p class="text-sm text-slate-400 mt-1">Carbon emission tracking and ESG reporting with AI document analysis.</p>
+      </div>
+    </div>
+  </a>
+</div>
+</article>
+
+
+<article class="space-y-6">
+<div>
+<p class="text-xs uppercase tracking-widest text-slate-400 font-semibold">F.R.O.S.T.</p>
+<h3 class="text-2xl font-bold mt-2">F.R.O.S.T. (Focus Restriction Timer)</h3>
+<p class="text-slate-400 mt-3">A "hard-gate" psychological firewall Chrome Extension designed for extreme productivity. It enforces a strict, non-negotiable blacklist and intelligent YouTube content filter until a pre-determined date is reached, featuring a unique anti-tamper protocol.<br/><span class="font-semibold text-slate-200">Tech Stack:</span> JavaScript, Chrome Extensions API, HTML/CSS.<br/><span class="font-semibold text-slate-200">Key Focus:</span> Distraction elimination, Anti-Tamper security, Context-aware filtering.</p>
+</div>
+<div class="grid grid-cols-1 gap-4">
+  <a href="https://github.com/rithulraveendran/F.R.O.S.T." target="_blank" rel="noopener noreferrer" class="group block rounded-2xl border border-slate-800/70 bg-slate-900/60 p-6 flex flex-col sm:flex-row items-center gap-6 justify-between hover:border-cyan-500/50 transition-colors cursor-pointer">
+    <div class="flex items-center gap-4 text-slate-200">
+      <div class="p-4 bg-cyan-500/10 rounded-xl text-cyan-400">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+      </div>
+      <div>
+        <h4 class="text-lg font-bold flex items-center gap-2">Extreme Productivity Firewall <svg class="w-4 h-4 text-cyan-500 opacity-50 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg></h4>
+        <p class="text-sm text-slate-400 mt-1">Unremovable Chrome extension with context-aware YouTube filtering and strict distraction limits.</p>
+      </div>
+    </div>
+  </a>
+</div>
+</article>
+
+</div>
+</section>
+<!-- END: WorkShowcaseGrid -->
+
+<!-- BEGIN: CallToActionBanner -->
+<section class="max-w-7xl mx-auto px-6 mb-32">
+<div class="bg-blue-50/50 border border-blue-100/50 rounded-[40px] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-12 overflow-hidden relative">
+<div class="max-w-xl relative z-10">
+<h2 class="text-3xl font-bold mb-4">Want to dive deeper?</h2>
+<p class="text-gray-600 mb-8 leading-relaxed">
+            Check out detailed case studies on my LinkedIn or reach out for a personalized walkthrough of my projects!
+          </p>
+<div class="flex flex-wrap gap-4">
+<a class="bg-blue-600 text-white px-6 py-3 rounded-full font-bold flex items-center gap-2 hover:bg-blue-700 transition-all" href="https://www.linkedin.com/in/rithulraveendran/" target="_blank" rel="noopener noreferrer">
+<span class="font-sans font-black">in</span> View LinkedIn
+            </a>
+<a class="bg-white text-gray-800 px-6 py-3 rounded-full font-bold border border-gray-200 flex items-center gap-2 hover:bg-gray-50 transition-all" href="mailto:r.rithul@icloud.com" target="_blank" rel="noopener noreferrer">
+<svg fill="currentColor" height="18" viewbox="0 0 16 16" width="18" xmlns="http://www.w3.org/2000/svg">
+<path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-2.5a2 2 0 0 0-1.6.8L8 14.333 6.1 11.8a2 2 0 0 0-1.6-.8H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12z"></path>
+</svg>
+              Connect
+            </a>
+<a class="bg-slate-800 text-white px-6 py-3 rounded-full font-bold flex items-center gap-2 hover:bg-slate-700 transition-all shadow-lg" href="resume.pdf" target="_blank" rel="noopener noreferrer">
+<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" height="18" width="18" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+              Resume
+            </a>
+</div>
+</div>
+<div class="md:w-2/5 w-full flex justify-center">
+<img alt="LinkedIn Preview" class="rounded-2xl shadow-lg rotate-2 translate-x-4 w-full max-w-md aspect-[16/9] object-cover" src="images/linkedin-preview.jpeg"/>
+</div>
+</div>
+</section>
+<!-- END: CallToActionBanner -->
+
 <!-- BEGIN: FooterCTA -->
-<section class="max-w-7xl mx-auto px-6 text-center mb-16">
+<section class="max-w-7xl mx-auto px-6 text-center mb-16 mt-16">
 <h2 class="text-4xl md:text-5xl font-bold mb-10">Let's build incredible<br/>things together!</h2>
 <div class="flex flex-wrap justify-center items-center gap-4 mb-20">
-<a class="bg-[#0f172a] text-white px-6 py-3 rounded-xl font-mono text-sm flex items-center gap-3 hover:bg-slate-800 transition-all" href="mailto:r.rithul@icloud.com">
+<a class="bg-[#0f172a] text-white px-6 py-3 rounded-xl font-mono text-sm flex items-center gap-3 hover:bg-slate-800 transition-all" href="mailto:r.rithul@icloud.com" target="_blank" rel="noopener noreferrer">
 <svg fill="currentColor" height="16" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
 <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"></path>
 </svg>
           r.rithul@icloud.com
         </a>
-<a class="bg-[#0A66C2] text-white p-3 rounded-xl hover:bg-[#0B5BB5] transition-all" href="https://www.linkedin.com/in/rithulraveendran/">
+<a class="bg-[#0A66C2] text-white p-3 rounded-xl hover:bg-[#0B5BB5] transition-all" href="https://www.linkedin.com/in/rithulraveendran/" target="_blank" rel="noopener noreferrer">
 <svg fill="currentColor" height="20" viewbox="0 0 16 16" width="20" xmlns="http://www.w3.org/2000/svg">
 <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708C16 15.487 15.474 16 14.825 16H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.244c.837 0 1.358-.554 1.358-1.248-.015-.71-.521-1.248-1.342-1.248-.821 0-1.358.538-1.358 1.248 0 .694.521 1.248 1.326 1.248h.016zM13.458 13.394V9.359c0-2.159-1.152-3.162-2.688-3.162-1.238 0-1.788.687-2.099 1.168V6.169H6.27c.03.775 0 7.225 0 7.225h2.401v-4.034c0-.215.016-.43.08-.585.174-.43.571-.875 1.239-.875.873 0 1.222.66 1.222 1.626v3.868h2.246z"></path>
 </svg>
 </a>
-<a class="bg-[#181717] text-white p-3 rounded-xl hover:bg-[#2B2B2B] transition-all" href="https://github.com/rithulraveendran">
+<a class="bg-[#181717] text-white p-3 rounded-xl hover:bg-[#2B2B2B] transition-all" href="https://github.com/rithulraveendran" target="_blank" rel="noopener noreferrer">
 <svg fill="currentColor" height="20" viewbox="0 0 16 16" width="20" xmlns="http://www.w3.org/2000/svg">
 <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
 </svg>
 </a>
-<a class="bg-[radial-gradient(circle_at_30%_30%,#ff4d8d_0%,#d62976_45%,#962fbf_70%,#4f5bd5_100%)] text-white p-3 rounded-xl transition-all shadow-[0_10px_20px_rgba(214,41,118,0.35)] hover:shadow-[0_14px_28px_rgba(214,41,118,0.45)]" href="https://www.instagram.com/rit.xul_">
-<svg fill="currentColor" height="20" viewbox="0 0 16 16" width="20" xmlns="http://www.w3.org/2000/svg">
+<a class="bg-[radial-gradient(circle_at_30%_30%,#ff4d8d_0%,#d62976_45%,#962fbf_70%,#4f5bd5_100%)] text-white p-3 rounded-xl transition-all shadow-[0_10px_20px_rgba(214,41,118,0.35)] hover:shadow-[0_14px_28px_rgba(214,41,118,0.45)]" href="https://www.instagram.com/rit.xul_" target="_blank" rel="noopener noreferrer">
+<svg fill="currentColor" height="20" viewBox="0 0 16 16" width="20" xmlns="http://www.w3.org/2000/svg">
 <path d="M8 0C5.829 0 5.557.01 4.703.048 3.85.087 3.27.222 2.76.42a3.9 3.9 0 0 0-1.41.92A3.9 3.9 0 0 0 .42 2.76C.222 3.27.087 3.85.048 4.703.01 5.557 0 5.829 0 8c0 2.171.01 2.443.048 3.297.039.852.174 1.433.372 1.943.2.51.464.942.92 1.41.468.456.9.72 1.41.92.51.198 1.09.333 1.943.372C5.557 15.99 5.829 16 8 16c2.171 0 2.443-.01 3.297-.048.852-.039 1.433-.174 1.943-.372.51-.2.942-.464 1.41-.92.456-.468.72-.9.92-1.41.198-.51.333-1.09.372-1.943C15.99 10.443 16 10.171 16 8c0-2.171-.01-2.443-.048-3.297-.039-.852-.174-1.433-.372-1.943a3.9 3.9 0 0 0-.92-1.41 3.9 3.9 0 0 0-1.41-.92C12.73.222 12.15.087 11.297.048 10.443.01 10.171 0 8 0zm0 3.892A4.108 4.108 0 1 1 3.892 8 4.108 4.108 0 0 1 8 3.892zm0 6.769A2.661 2.661 0 1 0 5.339 8 2.661 2.661 0 0 0 8 10.661zm4.271-6.984a.96.96 0 1 1-.96-.96.96.96 0 0 1 .96.96z"></path>
 </svg>
 </a>
-<a class="bg-[radial-gradient(circle_at_30%_30%,#7c3aed_0%,#4f46e5_55%,#1f2937_100%)] text-white p-3 rounded-xl transition-all shadow-[0_8px_16px_rgba(79,70,229,0.25)] hover:shadow-[0_10px_20px_rgba(79,70,229,0.35)]" href="https://www.instagram.com/framesbyrit">
-<svg fill="currentColor" height="20" viewbox="0 0 16 16" width="20" xmlns="http://www.w3.org/2000/svg">
-<path d="M10.5 2.5h-5l-1 1H2.5a1 1 0 0 0-1 1V12a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V4.5a1 1 0 0 0-1-1H11.5l-1-1zm-2.5 9a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0-1.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"></path>
+<a class="bg-[#FFA116] text-white p-3 rounded-xl transition-all shadow-[0_8px_16px_rgba(255,161,22,0.25)] hover:shadow-[0_10px_20px_rgba(255,161,22,0.35)] hover:bg-[#e08d13]" href="https://leetcode.com/u/rithulraveendran/" target="_blank" rel="noopener noreferrer">
+<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path d="M16.102 17.93l-2.697 2.607c-.466.467-1.111.662-1.823.662s-1.357-.195-1.824-.662l-4.332-4.363c-.467-.467-.702-1.15-.702-1.863s.235-1.357.702-1.824l4.319-4.38c.467-.467 1.125-.645 1.837-.645s1.357.195 1.823.662l2.697 2.606c.514.515 1.365.497 1.9-.038.536-.536.554-1.387.039-1.899l-2.609-2.556c-1.488-1.487-3.732-2.169-6.002-2.169s-4.513.682-6.001 2.169l-4.322 4.38c-1.487 1.487-2.124 3.513-2.124 5.748s.637 4.261 2.124 5.748l4.332 4.363c1.488 1.487 3.512 2.169 5.766 2.169s4.278-.682 5.765-2.169l2.609-2.556c.515-.515.497-1.366-.039-1.902-.534-.534-1.385-.552-1.9-.038zM20.811 13.01H10.666c-.702 0-1.27.604-1.27 1.346s.568 1.346 1.27 1.346h10.145c.701 0 1.27-.604 1.27-1.346s-.569-1.346-1.27-1.346z"/>
 </svg>
 </a>
 </div>
 </section>
 <!-- END: FooterCTA -->
+
+
+<!-- BEGIN: Image Modal -->
+<div id="imageModal" class="fixed inset-0 z-[100] hidden bg-slate-900/90 backdrop-blur-sm flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+  <div class="relative w-full max-w-5xl flex flex-col items-center gap-4 transform scale-95 transition-transform duration-300" id="imageModalContent">
+    <button onclick="closeModal()" class="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors p-2 bg-slate-800/50 rounded-full cursor-pointer">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+    </button>
+    <img id="modalImg" src="" alt="Achievement Full View" class="w-full max-h-[80vh] object-contain rounded-2xl shadow-2xl bg-white/5" />
+    <p id="modalCaption" class="text-white text-xl font-semibold bg-slate-800/80 px-6 py-2 rounded-full text-center"></p>
+  </div>
+</div>
+<!-- END: Image Modal -->
+
 </main>
+
 <!-- BEGIN: MainFooter -->
 <footer class="max-w-7xl mx-auto px-6 py-12 border-t border-gray-100 flex flex-col md:flex-row justify-end items-center gap-6">
 <div class="flex items-center gap-2 ml-auto">
 <span class="text-xs font-bold uppercase tracking-widest text-gray-400">Back to Top</span>
-<a class="p-2 bg-gray-100 text-slate-700 rounded-lg hover:bg-gray-200 transition-colors" href="#">
+<a class="p-2 bg-gray-100 text-slate-700 rounded-lg hover:bg-gray-200 transition-colors" href="#" target="_blank" rel="noopener noreferrer">
 <svg fill="currentColor" height="16" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
 <path d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z" fill-rule="evenodd"></path>
 </svg>
@@ -411,6 +494,7 @@ NLP-driven extraction + verification queue + audit-ready reporting.
 </div>
 </footer>
 <!-- END: MainFooter -->
+
 <script>
   (function () {
     const track = document.getElementById('achievementTrack');
@@ -464,29 +548,60 @@ NLP-driven extraction + verification queue + audit-ready reporting.
       rafId = requestAnimationFrame(updateCenter);
     });
 
-    window.addEventListener('load', updateCenter);
-    updateCenter();
+    window.addEventListener('load', () => {
+      // Ensure smooth centering on load regardless of layout timing
+      Promise.all(Array.from(document.images).filter(img => !img.complete).map(img => new Promise(resolve => { img.onload = img.onerror = resolve; }))).then(() => {
+        updateCenter();
+        const mid = Math.floor(cards.length / 2);
+        scrollToCard(mid);
+      });
+    });
+
+    // Modal Logic
+    window.openModal = function(card) {
+      const img = card.querySelector('img');
+      const caption = card.querySelector('div').innerText;
+      const modal = document.getElementById('imageModal');
+      const modalImg = document.getElementById('modalImg');
+      const modalCaption = document.getElementById('modalCaption');
+      const modalContent = document.getElementById('imageModalContent');
+
+      modalImg.src = img.src;
+      modalCaption.innerText = caption;
+
+      modal.classList.remove('hidden');
+      // trigger reflow
+      void modal.offsetWidth;
+      modal.classList.remove('opacity-0');
+      modalContent.classList.remove('scale-95');
+      document.body.style.overflow = 'hidden';
+    };
+
+    window.closeModal = function() {
+      const modal = document.getElementById('imageModal');
+      const modalContent = document.getElementById('imageModalContent');
+      
+      modal.classList.add('opacity-0');
+      modalContent.classList.add('scale-95');
+      
+      setTimeout(() => {
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+      }, 300);
+    };
+
+    document.getElementById('imageModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeModal();
+      }
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && !document.getElementById('imageModal').classList.contains('hidden')) {
+        closeModal();
+      }
+    });
+
   })();
 </script>
 </body></html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
